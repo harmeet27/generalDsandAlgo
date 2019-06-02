@@ -5,7 +5,7 @@ public class Tree {
 
     public void add(Integer data){
         if(root==null){
-            root = new Node(data,null,null);
+            root = new Node(data,null,null, null);
         }
         else {
             add(data, root);
@@ -19,7 +19,7 @@ public class Tree {
         /* node.data > data ? add(data, node.left) : add(data, node.right); */
         if(node.data > data){
             if(node.left==null){
-                Node temp = new Node(data, null, null);
+                Node temp = new Node(data, null, null, null);
                 node.left=temp;
             }
             else{
@@ -28,7 +28,7 @@ public class Tree {
         }
         else if(node.data <= data){
             if(node.right==null){
-                Node temp = new Node(data, null, null);
+                Node temp = new Node(data, null, null, null);
                 node.right=temp;
             }
             else{

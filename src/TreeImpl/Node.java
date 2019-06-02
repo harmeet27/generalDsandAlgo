@@ -5,6 +5,7 @@ public class Node {
     public Integer data ;
     public Node left;
     public Node right;
+    public Integer index;
 
     public Integer getData() {
         return data;
@@ -14,9 +15,10 @@ public class Node {
         this.data = data;
     }
 
-    public Node(Integer data, Node left, Node right) {
+    public Node(Integer data, Node left, Node right, Integer index) {
         this.data = data;
         this.left = left;
         this.right = right;
+        this.index = index;
     }
 }
