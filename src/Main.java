@@ -1,5 +1,6 @@
 import Search.BinarySearch;
 import Search.LinearSearch;
+import TreeImpl.BinaryTree;
 import TreeImpl.Tree;
 import TreeImpl.Node;
 
@@ -187,13 +188,13 @@ public class Main {
         tr.add(31);
         tr.search(5);
 
-        System.out.println(tr.search(9));
+//        System.out.println(tr.search(9));
         Node n = tr.getHead();
 
 //        preorder(n);
 //        postorder(n);
 //        inorder(n);
-          System.out.println(getHeight(n));
+//          System.out.println(getHeight(n));
 
 //          leftView(n);
 //            n.index = 0;   //topView
@@ -210,8 +211,30 @@ public class Main {
             if(t.right != null){
                 q.add(t.right);
             }
-
         }
 //        System.out.println(n.data); //acccess class level variables
+
+        BinaryTree trBT = new BinaryTree(); //root = null;
+        trBT.add(10);  //10 --> 5, 2,   10, 5 ,2, 3, 8, 15 , 30 31,   2 8 5 30 15 10
+        trBT.add(15);
+        trBT.add(25);
+        trBT.add(35);
+        trBT.add(1);
+        trBT.add(45);
+        trBT.add(55);
+        trBT.add(75);
+        trBT.add(85);
+        trBT.add(95);
+        trBT.add(65);
+        trBT.add(105);
+        trBT.add(205);
+        trBT.add(305);
+        preorder(trBT.getHead());
+
+
+//        trBT.levelOrder();
+
+
+
     }
 }
