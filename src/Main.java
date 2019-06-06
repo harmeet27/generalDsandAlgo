@@ -1,6 +1,7 @@
 import Search.BinarySearch;
 import Search.LinearSearch;
 import TreeImpl.BinaryTree;
+import TreeImpl.MaxHeapTree;
 import TreeImpl.Tree;
 import TreeImpl.Node;
 
@@ -214,7 +215,8 @@ public class Main {
         }
 //        System.out.println(n.data); //acccess class level variables
 
-        BinaryTree trBT = new BinaryTree(); //root = null;
+//        BinaryTree trBT = new BinaryTree(); //root = null;
+        MaxHeapTree trBT = new MaxHeapTree();
         trBT.add(10);  //10 --> 5, 2,   10, 5 ,2, 3, 8, 15 , 30 31,   2 8 5 30 15 10
         trBT.add(15);
         trBT.add(25);
@@ -229,10 +231,10 @@ public class Main {
         trBT.add(105);
         trBT.add(205);
         trBT.add(305);
-        preorder(trBT.getHead());
+//        preorder(trBT.getHead());
 
 
-//        trBT.levelOrder();
+        trBT.levelOrder();
 
 
 
