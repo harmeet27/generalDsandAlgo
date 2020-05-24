@@ -1,4 +1,4 @@
-package com.preparation.longestSubstring;
+package com.preparation.algorithm.string.longestSubstring;
 
 import java.util.HashMap;
 
