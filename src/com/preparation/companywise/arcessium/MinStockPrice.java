@@ -28,6 +28,7 @@ package com.preparation.companywise.arcessium;
  */
 
 import java.util.HashSet;
+import java.util.Stack;
 
 public class MinStockPrice {
 
@@ -38,12 +39,13 @@ public class MinStockPrice {
         int initialPrice = 10;
         int target = 1;
         findMinStocks(initialPrice, target, initialPrice, 0);
+//        findMinStocksIterativeDFS(initialPrice, target);
         System.out.println(min);
     }
 
     private static void findMinStocks(int initialPrice, int target, int sum, int days) {
 
-        if (sum > target * 2) {
+        if (sum > 10000) {
             return;
         }
         if (sum < 0) {
@@ -67,5 +69,47 @@ public class MinStockPrice {
         findMinStocks(initialPrice, target, sum * 2, days + 1);
 
 
+    }
+
+    private static void findMinStocksIterativeDFS(int initialPrice, int target) {
+
+        Stack<Integer> stack = new Stack<>();
+        stack.add(initialPrice);
+        HashSet<Integer> visited = new HashSet<>();
+        int days = 0;
+
+        while (!stack.isEmpty()) {
+
+            int curr = stack.pop();
+
+            if (curr > 10000) {
+                continue;
+            }
+            if (curr < 0) {
+                continue;
+            }
+
+            if (visited.contains(curr)) {
+                continue;
+            }
+
+            visited.add(curr);
+
+            if (target == curr) {
+                if (min > days) {
+                    min = days;
+                }
+                return;
+            }
+
+            stack.add(curr * 2);
+            stack.add(curr - 1);
+            days++;
+        }
+    }
+
+    class Stock {
+        int price;
+        int sum;
     }
 }
