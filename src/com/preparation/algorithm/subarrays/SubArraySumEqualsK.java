@@ -14,7 +14,7 @@ public class SubArraySumEqualsK {
     public static int subarraySumK(int arr[], int k) {
         //hashmap of sum-k, count
         HashMap<Integer, Integer> records = new HashMap<>();
-        //for 0th sum , count is 1
+        //for 0th sum , count is 1 , it is imp if only 1 valid case is there of whole array.
         records.put(0, 1);
         int count = 0;
         int sum = 0;
