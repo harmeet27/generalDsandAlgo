@@ -10,6 +10,8 @@ import java.util.HashMap;
  * item or don’t pick it (0-1 property).
  * <p>
  * <p>
+ *
+ *  Each item can only be selected once, as we don’t have multiple quantities of any item.
  * <p>
  * Ex:
  * value : 60,100,120
