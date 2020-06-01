@@ -1,6 +1,4 @@
-package com.preparation.algorithm.dp.grokkingDPPattern.knapsack01;
-
-import java.util.Arrays;
+package com.preparation.algorithm.backtracking;
 
 /**
  * Problem Statement #
@@ -46,21 +44,17 @@ public class EqualSubsetSumPartition {
             totalSum+=i;
         }
 
-        //odd sum cant be divided in 2 equal sets
+        //odd sum cant be divided in 2 eaual sets
         if(totalSum%2!=0){
             return false;
         }
 
-        int[][] memo =new int[nums.length+1][totalSum+1];
-        for(int[] array : memo){
-            Arrays.fill(array,-1);
-        }
-        return canPartition(nums,totalSum/2,0,0,memo);
+
+        return canPartition(nums,totalSum/2,0,0);
     }
 
 
-    static boolean canPartition(int[] nums,int k, int index,int sum, int[][] memo){
-
+    static boolean canPartition(int[] nums,int k, int index,int sum){
         if(sum==k){
             return true;
         }
@@ -68,30 +62,13 @@ public class EqualSubsetSumPartition {
         if(index>=nums.length){
             return false;
         }
-
-        if(memo[index][sum]!=-1){
-            if(memo[index][sum]==1){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-
-
         boolean included=false;
         if(sum+nums[index] <= k){
-            included = canPartition(nums,k, index+1,sum+nums[index],memo);
+            included = canPartition(nums,k, index+1,sum+nums[index]);
         }
 
-        boolean excluded = canPartition(nums,k, index+1, sum,memo);
+        boolean excluded = canPartition(nums,k, index+1, sum);
 
-        boolean valid=included|excluded;
-        if(valid){
-            memo[index][sum]=1;
-        }else{
-            memo[index][sum]=0;
-        }
 
         return included | excluded;
     }
