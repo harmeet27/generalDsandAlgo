@@ -7,6 +7,11 @@ import java.util.HashMap;
  * Given a knapsack weight W and a set of n items with certain value vali and weight wti, we need to calculate minimum amount
  * that could make up this quantity exactly. This is different from classical Knapsack problem, here we are allowed to use
  * unlimited number of instances of an item.
+ *
+ *
+ * NOTE:  For unbounded : Always use DFs approach and not include or exclude. It may result in wrong answer
+ *
+ *
  */
 public class UnboundedKnapsack {
 
