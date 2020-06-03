@@ -24,11 +24,11 @@ import java.util.Arrays;
 public class RodCutting {
 
     public static void main(String... s) {
-//        int length = 8;
-//        int arr[] = new int[]{1, 5, 8, 9, 10, 17, 17, 20};
-
         int length = 8;
-        int arr[] = new int[]{3, 5, 8, 9, 10, 17, 17, 20};
+        int arr[] = new int[]{1, 5, 8, 9, 10, 17, 17, 20};
+
+//        int length = 8;
+//        int arr[] = new int[]{3, 5, 8, 9, 10, 17, 17, 20};
 
         int[][] memo = new int[arr.length + 1][length + 1];
         Arrays.stream(memo).forEach(a -> Arrays.fill(a, -1));
@@ -49,18 +49,13 @@ public class RodCutting {
             return 0;
         }
 
-        int max = 0;
         int current = 0;
         for (int i = 0; i < arr.length; i++) {
             if (length - (i + 1) >= 0) {
-                current = cutMaxPriceRod(arr, length - (i + 1), i, sum + arr[i], memo);
-            }
-
-            if (current > max) {
-                max = current;
+                current = Math.max(current, cutMaxPriceRod(arr, length - (i + 1), i, sum + arr[i], memo));
             }
         }
-        memo[index][length] = max;
-        return max;
+        memo[index][length] = current;
+        return current;
     }
 }

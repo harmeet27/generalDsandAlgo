@@ -24,16 +24,16 @@ public class MaxRibbonCut {
 
 
     public static void main(String... s) {
-        int n = 7;
-        int arr[] = new int[]{5, 2, 5};
+//        int n = 7;
+//        int arr[] = new int[]{5, 2, 5};
 
-//        int n = 17;
-//        int arr[] = new int[]{2, 1, 3};
+        int n = 17;
+        int arr[] = new int[]{2, 1, 3};
 
         int[][] memo = new int[arr.length + 1][n + 1];
         Arrays.stream(memo).forEach(a -> Arrays.fill(a, -1));
-        System.out.println(findMaxRibbonCuts(arr, n, 0, memo));
-//        System.out.println(findMaxRibbonCutsDFS(arr, n, 0, memo) - 1);
+//        System.out.println(findMaxRibbonCuts(arr, n, 0, memo));
+        System.out.println(findMaxRibbonCutsDFS(arr, n, 0, memo) - 1);
     }
 
     private static int findMaxRibbonCuts(int[] arr, int n, int index, int[][] memo) {
@@ -82,22 +82,18 @@ public class MaxRibbonCut {
 
 
         int include = 0;
-        int max = 0;
         for (int i = 0; i < arr.length; i++) {
             if (n - arr[i] >= 0) {
-                include = findMaxRibbonCutsDFS(arr, n - arr[i], i, memo);
-            }
-            if (include > max) {
-                max = include;
+                include = Math.max(include, findMaxRibbonCutsDFS(arr, n - arr[i], i, memo));
             }
         }
 
         //take care of cases where each children is returning 0, you dont want to add 1 + in this case
         //since its not the optimal solution we are looking for.
-        if (max == 0) {
-            max = -1;
+        if (include == 0) {
+            include = -1;
         }
-        memo[index][n] = 1 + max;
+        memo[index][n] = 1 + include;
         return memo[index][n];
     }
 }
