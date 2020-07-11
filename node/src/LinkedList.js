@@ -60,20 +60,40 @@ constructor(){
    return this.head;
  }
 
- remove(node){
-   if(this.head.data === node){
+ remove(data, index = null){
+   if(this.head.data === data || index === 0){
      this.head = this.head.next;
+     return this.head;
    }
    let temp = this.head;
    let previous = temp;
    while(temp !== null){
-     if(temp.data === node){
+     if(temp.data === data){
          previous.next = temp.next;
      }
      previous = temp;
      temp = temp.next;
    }
    return this.head;
+ }
+
+ removeAtIndex(index){
+     if(index === 0){
+       this.remove(data, index);
+     }
+     let temp = this.head;
+     let previous = null;
+     let count = 0;
+     while(temp !== null){
+       if(index === count){
+         previous.next = temp.next;
+         break;
+       }
+       previous = temp;
+       temp = temp.next;
+       count++;
+     }
+     return this.head;
  }
 }
 
