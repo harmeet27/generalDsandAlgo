@@ -5,7 +5,7 @@ target/classes
 logs/
 *.csv
 /target/
-/out*
+*/out*
 
 ### IntelliJ IDEA ###
 .idea
