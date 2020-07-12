@@ -109,6 +109,16 @@ constructor(){
    this.head = previous;
    return this.head;
  }
+
+ display(){
+   let temp = this.head;
+   let string = "";
+   while(temp !== null){
+     string = string + " " + temp.data;
+     temp =  temp.next;
+   }
+   console.log(string);
+ }
 }
 
 export default LinkedList;

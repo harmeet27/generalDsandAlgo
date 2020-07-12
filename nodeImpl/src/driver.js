@@ -15,3 +15,5 @@ console.log('list', list);
 list.reverse()
 
 console.log('reverse', list);
+
+list.display();
