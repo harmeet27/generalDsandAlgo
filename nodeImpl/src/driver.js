@@ -17,3 +17,5 @@ list.reverse()
 console.log('reverse', list);
 
 list.display();
+const size = list.size();
+console.log(size);

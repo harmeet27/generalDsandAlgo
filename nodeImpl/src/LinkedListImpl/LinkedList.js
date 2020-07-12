@@ -119,6 +119,16 @@ constructor(){
    }
    console.log(string);
  }
+
+ size(){
+   let count = 0;
+   let temp = this.head;
+   while(temp !== null){
+     count = count + 1;
+     temp = temp.next;
+   }
+   return count;
+ }
 }
 
 export default LinkedList;
