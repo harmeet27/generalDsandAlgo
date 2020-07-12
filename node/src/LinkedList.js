@@ -95,6 +95,20 @@ constructor(){
      }
      return this.head;
  }
+
+ reverse(){
+   let current = this.head;
+   let previous = null;
+   let next = null;
+   while(current !== null){
+     next = current.next;
+     current.next = previous;
+     previous = current;
+     current = next;
+   }
+   this.head = previous;
+   return this.head;
+ }
 }
 
 export default LinkedList;

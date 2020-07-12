@@ -11,3 +11,7 @@ list.add('8', 3);
 list.removeAtIndex(1);
 // list.remove('2');
 console.log('list', list);
+
+list.reverse()
+
+console.log('reverse', list);
