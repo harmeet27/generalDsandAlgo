@@ -6,6 +6,7 @@ logs/
 *.csv
 /target/
 */out*
+*/node_mdoules/*
 
 ### IntelliJ IDEA ###
 .idea
