@@ -12,10 +12,14 @@ list.removeAtIndex(1);
 // list.remove('2');
 console.log('list', list);
 
-list.reverse()
+// list.reverse()
 
-console.log('reverse', list);
+// console.log('reverse', list);
 
 list.display();
-const size = list.size();
-console.log(size);
+
+list.createLoop(2);
+
+console.log('list', list);
+// const size = list.size();
+// console.log(size);
