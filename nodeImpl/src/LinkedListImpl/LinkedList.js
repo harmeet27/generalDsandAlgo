@@ -5,6 +5,11 @@ constructor(){
   this.head = null;
 }
 
+getHead()
+{
+  return this.head;
+}
+
  add(data, index = null){
    if(index !== null){
      return this._addAtIndex(data, index);

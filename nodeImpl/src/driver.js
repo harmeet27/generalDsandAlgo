@@ -10,16 +10,36 @@ list.add('6', 0);
 list.add('8', 3);
 list.removeAtIndex(1);
 // list.remove('2');
-console.log('list', list);
+// console.log('list', list);
 
 // list.reverse()
 
 // console.log('reverse', list);
 
-list.display();
+// list.display();
 
 list.createLoop(2);
 
-console.log('list', list);
+function detectLoop(){
+  const head = list.getHead();
+  let fast = head;
+  let slow = head;
+  let flag = 0;
+  while(fast !== null &&  slow !== null && fast.next !== null){
+    slow = slow.next;
+    fast = fast.next.next;
+    if(slow === fast){
+      flag = 1;
+      break;
+    }
+  }
+  if(flag === 1){
+    console.log('loop found');
+  } else {
+    console.log('loop not found');
+  }
+};
+
+detectLoop();
 // const size = list.size();
 // console.log(size);
