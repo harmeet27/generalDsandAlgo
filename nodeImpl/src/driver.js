@@ -20,7 +20,8 @@ list.removeAtIndex(1);
 
 list.createLoop(2);
 
-function detectLoop(){
+function detectLoop(removeLoop = false){
+  console.log('with loop:', list);
   const head = list.getHead();
   let fast = head;
   let slow = head;
@@ -30,16 +31,29 @@ function detectLoop(){
     fast = fast.next.next;
     if(slow === fast){
       flag = 1;
+      if(removeLoop){
+        fast.next = null;
+        return head;
+      }
       break;
     }
   }
   if(flag === 1){
     console.log('loop found');
+    return true;
   } else {
     console.log('loop not found');
+    return false;
   }
 };
 
 detectLoop();
+
+function removeLoop(){
+  detectLoop(true);
+  console.log('after loop removed :', list);
+}
+
+removeLoop();
 // const size = list.size();
 // console.log(size);
