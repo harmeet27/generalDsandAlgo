@@ -9,16 +9,7 @@ list.add('1', 1);
 list.add('6', 0);
 list.add('8', 3);
 list.removeAtIndex(1);
-// list.remove('2');
-// console.log('list', list);
-
-// list.reverse()
-
-// console.log('reverse', list);
-
-// list.display();
-
-list.createLoop(2);
+// list.createLoop(2);
 
 function detectLoop(removeLoop = false){
   console.log('with loop:', list);
@@ -47,13 +38,31 @@ function detectLoop(removeLoop = false){
   }
 };
 
-detectLoop();
+// detectLoop();
 
 function removeLoop(){
   detectLoop(true);
   console.log('after loop removed :', list);
 }
 
-removeLoop();
-// const size = list.size();
-// console.log(size);
+// removeLoop();
+
+function nodeAtKindexFromLast(k){
+  const head = list.getHead();
+  console.log(list);
+  let slow = head;
+  let fast = head;
+  let i = 1;
+  while(i <= k){
+    fast = fast.next;
+    i++;
+  }
+  while(fast !== null){
+    slow = slow.next;
+    fast = fast.next;
+  }
+  return slow.data;
+}
+
+const nodeAtK = nodeAtKindexFromLast(4);
+console.log(nodeAtK);
