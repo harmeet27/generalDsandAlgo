@@ -1,4 +1,5 @@
 import LinkedList from './LinkedListImpl/LinkedList.js';
+import preFetchProduct from  './Algorithms/preFetchProduct.js'
 
 let list = new LinkedList();
 list.add('2');
@@ -64,5 +65,15 @@ function nodeAtKindexFromLast(k){
   return slow.data;
 }
 
-const nodeAtK = nodeAtKindexFromLast(4);
-console.log(nodeAtK);
+// const nodeAtK = nodeAtKindexFromLast(4);
+// console.log(nodeAtK);
+
+const newList = new LinkedList();
+newList.add(1);
+newList.add(2);
+newList.add(3);
+newList.add(4);
+newList.add(5);
+
+const preFetchResultArray = [preFetchProduct(newList, 1, 2), preFetchProduct(newList, 0, 4), preFetchProduct(newList, 1, 3)];
+console.log(preFetchResultArray);
