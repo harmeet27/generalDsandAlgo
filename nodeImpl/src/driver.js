@@ -16,16 +16,19 @@ list.removeAtIndex(1);
 function detectLoop(removeLoop = false){
   console.log('with loop:', list);
   const head = list.getHead();
-  let fast = head;
-  let slow = head;
+  if(head === null){
+    throw new Error('List not created yet');
+  }
+  let fastNode = head;
+  let slowNode = head;
   let flag = 0;
-  while(fast !== null &&  slow !== null && fast.next !== null){
-    slow = slow.next;
-    fast = fast.next.next;
-    if(slow === fast){
+  while(fastNode !== null && fastNode.next !== null){
+    slowNode = slowNode.next;
+    fastNode = fastNode.next.next;
+    if(slowNode === fastNode){
       flag = 1;
       if(removeLoop){
-        fast.next = null;
+        fastNode.next = null;
         return head;
       }
       break;
@@ -51,19 +54,25 @@ function removeLoop(){
 
 function nodeAtKindexFromLast(k){
   const head = list.getHead();
-  console.log(list);
-  let slow = head;
-  let fast = head;
-  let i = 1;
-  while(i <= k){
-    fast = fast.next;
+  if(head === null){
+    throw new Error('List not created yet');
+  }
+  if(k > list.size()){
+    throw new Error('index out of bound');
+  }
+  let slowNode = head;
+  let fastNode = head;
+  let currentIndex = 1;
+
+  while(currentIndex <= k){
+    fastNode = fastNode.next;
     i++;
   }
-  while(fast !== null){
-    slow = slow.next;
-    fast = fast.next;
+  while(fastNode !== null){
+    slowNode = slowNode.next;
+    fastNode = fastNode.next;
   }
-  return slow.data;
+  return slowNode.data;
 }
 
 // const nodeAtK = nodeAtKindexFromLast(4);
