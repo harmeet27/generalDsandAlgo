@@ -1,6 +1,7 @@
 import LinkedList from './LinkedListImpl/LinkedList.js';
 import preFetchProduct from  './Algorithms/preFetchProduct.js';
 import dutchFlag from './Algorithms/dutchFlag.js';
+import dutchFlagConstantSpace from './Algorithms/dutchFlagConstantSpace.js';
 
 let list = new LinkedList();
 list.add('2');
@@ -90,4 +91,5 @@ const preFetchResultArray = [preFetchProduct(newList, 1, 2), preFetchProduct(new
 
 const sortedNumberArray = dutchFlag([0, 1, 2, 1, 0]);
 const sortedCharArray = dutchFlag(['a', 'b', 'c', 'b', 'c', 'c', 'c', 'a', 'a', 'b', 'a', 'c']);
-console.log(sortedNumberArray, sortedCharArray);
+const zeroOneTwoSorted = dutchFlagConstantSpace([2,0,2,1,1,0]);
+console.log(sortedNumberArray, sortedCharArray, zeroOneTwoSorted);
