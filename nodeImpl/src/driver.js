@@ -3,6 +3,7 @@ import preFetchProduct from  './Algorithms/preFetchProduct.js';
 import dutchFlag from './Algorithms/dutchFlag.js';
 import dutchFlagConstantSpace from './Algorithms/dutchFlagConstantSpace.js';
 import sortZeroOne from './Algorithms/sortZeroOne.js';
+import moveAllZerosToFront from './Algorithms/moveAllZerosToFront.js';
 
 let list = new LinkedList();
 list.add('2');
@@ -94,4 +95,6 @@ const sortedNumberArray = dutchFlag([0, 1, 2, 1, 0]);
 const sortedCharArray = dutchFlag(['a', 'b', 'c', 'b', 'c', 'c', 'c', 'a', 'a', 'b', 'a', 'c']);
 const zeroOneTwoSorted = dutchFlagConstantSpace([2,0,2,1,1,0]);
 const zeroOneSorted = sortZeroOne([0,1,0,1,1,0,0,1,0,1]);
-console.log(sortedNumberArray, sortedCharArray, zeroOneTwoSorted, zeroOneSorted);
+const allZerosAtFront = moveAllZerosToFront([2, 3, 4, 5, 0, 1, 0, 9, 0, 0, 7]);
+console.log(sortedNumberArray, sortedCharArray, zeroOneTwoSorted, zeroOneSorted, allZerosAtFront);
+// console.log(zeroOneTwoSorted);

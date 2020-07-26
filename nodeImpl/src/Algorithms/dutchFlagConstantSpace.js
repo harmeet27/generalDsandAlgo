@@ -7,14 +7,14 @@ function _swap(index1, index2, inputArray){
 function dutchFlagConstantSpace(inputArray){
   let zeroPointer = 0;
   let twoPointer = inputArray.length - 1;
-  while(inputArray[zeroPointer]==0){
+  while(inputArray[zeroPointer]===0){
   zeroPointer = zeroPointer + 1;
 }
-  while(inputArray[twoPointer]==2){
+  while(inputArray[twoPointer]===2){
    twoPointer = twoPointer - 1;
   }
   let currentPointer = zeroPointer;
-  while(zeroPointer <= twoPointer){
+  while(currentPointer <= twoPointer){
     if(inputArray[currentPointer] === 0){
       _swap(zeroPointer, currentPointer, inputArray)
       zeroPointer = zeroPointer + 1;

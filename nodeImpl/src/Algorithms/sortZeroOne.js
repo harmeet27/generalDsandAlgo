@@ -14,7 +14,7 @@ function sortZeroOne(inputArray){
    onePointer = onePointer - 1;
   }
   let currentPointer = zeroPointer;
-  while(zeroPointer <= onePointer){
+  while(currentPointer <= onePointer){
     if(inputArray[currentPointer] === 0){
       _swap(zeroPointer, currentPointer, inputArray)
       zeroPointer = zeroPointer + 1;
