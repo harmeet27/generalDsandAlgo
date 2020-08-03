@@ -5,6 +5,7 @@ import dutchFlagConstantSpace from './Algorithms/dutchFlagConstantSpace.js';
 import sortZeroOne from './Algorithms/sortZeroOne.js';
 import moveAllZerosToFront from './Algorithms/moveAllZerosToFront.js';
 import meetingRoomSchedule from './Algorithms/meetingRoomSchedule.js';
+import arrivalDepartureScheduling from './Algorithms/arrivalDepartureScheduling.js';
 
 let list = new LinkedList();
 list.add('2');
@@ -102,6 +103,8 @@ const allZerosAtFront = moveAllZerosToFront([2, 3, 4, 5, 0, 1, 0, 9, 0, 0, 7]);
 // const numberOfRoomsRequired = meetingRoomSchedule([1,3,5,6], [2,6,6,7]);
 // const numberOfRoomsRequired2 = meetingRoomSchedule([9.00,9.40], [9.10,12.00]);
 const numberOfRoomsRequired1 = meetingRoomSchedule([9.00,18.00,9.40,9.50,11.00,15.00], [9.10,20.00,12.00,11.20,11.30,19.00]);
+const aDnoOfRoomsRequired = arrivalDepartureScheduling([9.00,18.00,9.40,9.50,11.00,15.00], [9.10,20.00,12.00,11.20,11.30,19.00]);
 // console.log('Rooms Required:', numberOfRoomsRequired);
 console.log('Rooms Required:', numberOfRoomsRequired1);
+console.log('Rooms Required:', aDnoOfRoomsRequired);
 // console.log('Rooms Required:', numberOfRoomsRequired2);
