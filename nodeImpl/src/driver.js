@@ -6,6 +6,8 @@ import sortZeroOne from './Algorithms/sortZeroOne.js';
 import moveAllZerosToFront from './Algorithms/moveAllZerosToFront.js';
 import meetingRoomSchedule from './Algorithms/meetingRoomSchedule.js';
 import arrivalDepartureScheduling from './Algorithms/arrivalDepartureScheduling.js';
+import maxContiguousSubarrayZeroOne from './Algorithms/maxContiguousSubarrayZeroOne';
+import maxContiguousSubarrayZeroOneHashMap from './Algorithms/maxContiguousSubarrayZeroOneHashMap';
 
 let list = new LinkedList();
 list.add('2');
@@ -108,3 +110,7 @@ const aDnoOfRoomsRequired = arrivalDepartureScheduling([9.00,18.00,9.40,9.50,11.
 console.log('Rooms Required:', numberOfRoomsRequired1);
 console.log('Rooms Required:', aDnoOfRoomsRequired);
 // console.log('Rooms Required:', numberOfRoomsRequired2);
+console.log(maxContiguousSubarrayZeroOne([1, 1, 1, 0, 1, 1, 1]));
+console.log(maxContiguousSubarrayZeroOne([1, 0, 1, 0, 1, 1, 1, 0]));
+console.log(maxContiguousSubarrayZeroOneHashMap([1, 1, 1, 0, 1, 1, 1]));
+console.log(maxContiguousSubarrayZeroOneHashMap([1, 0, 1, 0, 1, 1, 1, 0]));
