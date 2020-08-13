@@ -35,6 +35,10 @@ public class LongestCommonSubstring {
 //            case 5:
 //                int[] dpSingle = new int[A.length + 1];//for simplicity we ignore oth index in dp table and keep it with 0.
 //                return lcsDpSingleArrat(A, B, dpSingle);
+            case 5:
+                int[][] memo3d = new int[A.length + 1][B.length + 1];
+                Arrays.stream(memo3d).forEach(arr -> Arrays.fill(arr, -1));
+                return lcsMemoOptimizeSpaceWithPost(A, B, A.length - 1, B.length - 1, memo3d);
             default:
                 return 0;
         }
@@ -97,6 +101,25 @@ public class LongestCommonSubstring {
 
         int notCommon = Math.max(lcsMemoOptimizeSpace(a, b, i - 1, j, 0, memo), lcsMemoOptimizeSpace(a, b, i, j - 1, 0, memo));
         memo[i][j] = Math.max(len, Math.max(common, notCommon));
+        return memo[i][j];
+    }
+
+    private static int lcsMemoOptimizeSpaceWithPost(int[] a, int[] b, int i, int j,int[][] memo) {
+        if (i < 0 || j < 0 || a == null || b == null) {
+            return 0;
+        }
+
+        if (memo[i][j] != -1) {
+            return memo[i][j];
+        }
+
+        int common = 0;
+        if (a[i] == b[j]) {
+            common = 1 + lcsMemoOptimizeSpaceWithPost(a, b, i - 1, j - 1,  memo);
+        }
+
+        int notCommon = Math.max(lcsMemoOptimizeSpaceWithPost(a, b, i - 1, j, memo), lcsMemoOptimizeSpaceWithPost(a, b, i, j - 1, memo));
+        memo[i][j] = Math.max(common, notCommon);
         return memo[i][j];
     }
 
