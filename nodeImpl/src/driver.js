@@ -9,6 +9,7 @@ import arrivalDepartureScheduling from './Algorithms/arrivalDepartureScheduling.
 import maxContiguousSubarrayZeroOne from './Algorithms/maxContiguousSubarrayZeroOne';
 import maxContiguousSubarrayZeroOneHashMap from './Algorithms/maxContiguousSubarrayZeroOneHashMap';
 import kandane from './Algorithms/kandane';
+import trappingRainWater from './Algorithms/trappingRainWater';
 
 let list = new LinkedList();
 list.add('2');
@@ -117,3 +118,5 @@ const aDnoOfRoomsRequired = arrivalDepartureScheduling([9.00,18.00,9.40,9.50,11.
 // console.log(maxContiguousSubarrayZeroOneHashMap([1, 0, 1, 0, 1, 1, 1, 0]));
 console.log(kandane([-2, -3, 4, -1, -2, 1, 5, -3]), 'kandane');
 console.log(kandane([1, -1, -2]), 'kandane negative')
+
+console.log('water stored', trappingRainWater([2,0,2]));
