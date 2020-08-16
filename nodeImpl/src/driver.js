@@ -10,6 +10,7 @@ import maxContiguousSubarrayZeroOne from './Algorithms/maxContiguousSubarrayZero
 import maxContiguousSubarrayZeroOneHashMap from './Algorithms/maxContiguousSubarrayZeroOneHashMap';
 import kandane from './Algorithms/kandane';
 import trappingRainWater from './Algorithms/trappingRainWater';
+import countOfSubarraysWithSumK from './Algorithms/countOfSubarraysWithSumK';
 
 let list = new LinkedList();
 list.add('2');
@@ -120,3 +121,4 @@ console.log(kandane([-2, -3, 4, -1, -2, 1, 5, -3]), 'kandane');
 console.log(kandane([1, -1, -2]), 'kandane negative')
 
 console.log('water stored', trappingRainWater([2,0,2]));
+console.log('count', countOfSubarraysWithSumK([0,0,0,0,0,0,0,0,0,0], 0));
