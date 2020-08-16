@@ -1,5 +1,9 @@
 package com.preparation.ds.list.questions;
 
+import com.preparation.ds.list.impl.CustomLinkedList;
+import com.preparation.ds.list.impl.Node;
+import com.preparation.ds.list.questions.algorithm.ReverseAList;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -14,67 +18,32 @@ import java.util.Queue;
  */
 public class ReverseInSizeK {
 
-    public static ReverseAList.SinglyLinkedListNode revereseInSizeK(ReverseAList.SinglyLinkedListNode head, int k) {
-        int size = findSize(head);
-        int total = size % k;
-        Queue<ReverseAList.SinglyLinkedListNode> queue = new LinkedList<>();
-        int traverseNodes = size - total;
-
-
-        ReverseAList.SinglyLinkedListNode temp = null;
-        ReverseAList.SinglyLinkedListNode prev = null;
-        ReverseAList.SinglyLinkedListNode curr = head;
-        ReverseAList.SinglyLinkedListNode first = null;
-        boolean init = true;
-
-        while (curr != null && traverseNodes > 0) {
-            int count = k;
-            ReverseAList.SinglyLinkedListNode start = curr;
-            while (count > 0) {
-                temp = prev;
-                prev = curr;
-                curr = curr.next;
-                prev.next = temp;
-                count--;
-                traverseNodes--;
-            }
-            if (init == true) {
-                init = false;
-                first = prev;
-            }
-            queue.add(start);
-            prev = null;
-        }
-
-        if (curr != null) {
-
-            queue.add(curr);
-        }
-        ReverseAList.SinglyLinkedListNode sample = queue.poll();
-        while (!queue.isEmpty()) {
-
-            ReverseAList.SinglyLinkedListNode second = queue.poll();
-
-            sample.next = second;
-            sample = second;
-        }
-        return first;
+    public static void main(String... s) {
+        CustomLinkedList<Integer> ll = new CustomLinkedList<>();
+        int k = 4;
+        System.out.println(reverseInSizeK(ll.getHead(), k));
     }
 
-    private static int findSize(ReverseAList.SinglyLinkedListNode head) {
-        int count = 0;
-        ReverseAList.SinglyLinkedListNode curr = head;
-        while (curr != null) {
-            curr = curr.next;
-            count++;
-        }
-        return count;
-    }
+    private static Node reverseInSizeK(Node<Integer> head, int k) {
+        Node curr =head;
+        int x=k;
 
-
-    public static ReverseAList.SinglyLinkedListNode revereseInSizeKRecursive(ReverseAList.SinglyLinkedListNode head, int k) {
+//        Node prev = reverseInK(head,k,prev);
         return null;
     }
 
+    private static Node<Integer> reverseInK(Node<Integer> head, int k, Node previous) {
+        int x = 0;
+        Node prev = previous;
+        Node curr = head;
+        while (curr != null && x < k) {
+            Node temp = curr;
+            curr = curr.next;
+            temp.next = prev;
+            prev = temp;
+        }
+
+        return head;
+    }
 
 }

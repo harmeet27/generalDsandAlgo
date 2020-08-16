@@ -2,6 +2,7 @@ package com.preparation.algorithm.subsets;
 
 /**
  * The total number of subsets of a given set of size n is equal to 2^n.
+ * And total number of subarray = n*(n+1)/2 i.e. time complexity n^2
  * <p>
  * For ex:
  * Input: S[] = [1,2,3]
