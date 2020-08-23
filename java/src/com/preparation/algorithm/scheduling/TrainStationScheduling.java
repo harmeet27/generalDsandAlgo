@@ -31,6 +31,9 @@ package com.preparation.algorithm.scheduling;
  * <p>
  * Time: o(n)
  * sspace : 0(n)
+ *
+ * Approach 3:
+ * Use Heap
  * *
  */
 public class TrainStationScheduling {

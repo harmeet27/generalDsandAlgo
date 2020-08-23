@@ -1,0 +1,17 @@
+For Path Finding: (we can use BFS,DFS, or Dijkstra)
+
+Dijkstra = BFS + priorityQueue over normal Queue.
+
+1. if path has weights, then Dijkstra is preferred (though can be solved using BFS also)
+2. If path has -ve weights also, simple backtracking + dp is preferred called as bellman ford
+    The Bellman-Ford is pretty much the same as the DP approach except that it is more space-optimized.
+    The Bellman–Ford algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other vertices
+    in a weighted digraph. It is slower than Dijkstra's algorithm for the same problem, but more versatile, as it is capable of handling graphs
+    in which some of the edge weights are negative numbers.
+3. If weight are constant for each path use any from BFS,DFS.
+
+
+
+Probs:
+1. Find min/max , always an issue.
+2. count is fine.

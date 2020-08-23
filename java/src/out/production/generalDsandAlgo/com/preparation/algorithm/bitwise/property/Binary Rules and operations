@@ -1,4 +1,5 @@
 Property:
+https://emre.me/computer-science/bit-manipulation-tricks/
 
 1. Binary xor --> for same values it will result in 0 else 1. i.e. 0 ^ 0 = 0 , 1 ^ 1 = 1
 2. Binary subtraction --> 0-1 = 1(borrow from left side), 1-0 = 0 , 1-1=0
@@ -30,3 +31,32 @@ Property:
 5. Popular data structure based on this ,
     ( If you have a CS background and understood whatever i have said up till now, then congrats!
      You now already know 80% about a powerful data structure called Fenwick Tree or Binary Indexed Tree. )
+
+
+6. How to detect even odd in bits?
+    simple if lsb is 1 then odd else even. Obvious no? last bit is always 2^0*1 or 2^0*0 , remaining all are always be even.
+    So to find:
+    find whether lsb is 1 or 0
+    to do that even
+    AND it with 1. if(0) odd else even
+
+7. How to detect if nth bit is set in bits.
+    Simple. use left shift. ANd then AND it with the number.
+    ex
+    175 check if 5th bit is set
+    175 --> 1010 1111
+
+    left shift 1 with 5
+    1<<5
+
+    1010 1111
+    0010 0000 (1<<5) AND now
+    0010 0000 (if same ans as 1<<5 then yes it is set else not)
+
+    Fromula = num & (1<<n)
+
+8. Set nth bit if not set
+    use OR in above
+
+9. MOST IMP : unset nth bit if it is not already unset
+    num & ~(1<<n)

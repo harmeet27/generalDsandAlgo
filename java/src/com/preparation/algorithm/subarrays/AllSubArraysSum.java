@@ -43,7 +43,7 @@ package com.preparation.algorithm.subarrays;
  * <p>
  * So all you'll need is to just traverse the array in one pass and put up an equation like
  * <p>
- * sum+=((n-i)*(i+1)*Ai) where Ai is the general term for the element of the array. And that's it you just find all the subarray sum in O(n).
+ * sum+=(n-i)*(i+1)*Ai where Ai is the general term for the element of the array. And that's it you just find all the subarray sum in O(n).
  */
 public class AllSubArraysSum {
 

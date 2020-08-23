@@ -23,6 +23,7 @@ public class SubArraySumEqualsK {
             int diff = sum - k;
 
             if (records.containsKey(diff)) {
+                //wont be count ++, it will be count of all encountered till here
                 count += records.get(diff);
             }
             records.put(sum, records.getOrDefault(sum, 0) + 1);
