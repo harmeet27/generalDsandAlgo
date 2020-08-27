@@ -1,16 +1,16 @@
 import LinkedList from './LinkedListImpl/LinkedList.js';
-import preFetchProduct from  './Algorithms/preFetchProduct.js';
-import dutchFlag from './Algorithms/dutchFlag.js';
-import dutchFlagConstantSpace from './Algorithms/dutchFlagConstantSpace.js';
-import sortZeroOne from './Algorithms/sortZeroOne.js';
-import moveAllZerosToFront from './Algorithms/moveAllZerosToFront.js';
-import meetingRoomSchedule from './Algorithms/meetingRoomSchedule.js';
-import arrivalDepartureScheduling from './Algorithms/arrivalDepartureScheduling.js';
-import maxContiguousSubarrayZeroOne from './Algorithms/maxContiguousSubarrayZeroOne';
-import maxContiguousSubarrayZeroOneHashMap from './Algorithms/maxContiguousSubarrayZeroOneHashMap';
-import kandane from './Algorithms/kandane';
+import preFetchProduct from  './Algorithms/prefetch/preFetchProduct.js';
+import dutchFlag from './Algorithms/sorting/dutchFlag.js';
+import dutchFlagConstantSpace from './Algorithms/sorting/dutchFlagConstantSpace.js';
+import sortZeroOne from './Algorithms/pointers/sortZeroOne.js';
+import moveAllZerosToFront from './Algorithms/pointers/moveAllZerosToFront.js';
+import meetingRoomSchedule from './Algorithms/scheduling/meetingRoomSchedule.js';
+import arrivalDepartureScheduling from './Algorithms/scheduling/arrivalDepartureScheduling.js';
+import maxContiguousSubarrayZeroOne from './Algorithms/subarrays/maxContiguousSubarrayZeroOne';
+import maxContiguousSubarrayZeroOneHashMap from './Algorithms/subarrays/maxContiguousSubarrayZeroOneHashMap';
+import kandane from './Algorithms/subarrays/kandane';
 import trappingRainWater from './Algorithms/trappingRainWater';
-import countOfSubarraysWithSumK from './Algorithms/countOfSubarraysWithSumK';
+import countOfSubarraysWithSumK from './Algorithms/prefetch/countOfSubarraysWithSumK';
 
 let list = new LinkedList();
 list.add('2');

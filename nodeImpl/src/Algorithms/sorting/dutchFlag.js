@@ -8,6 +8,7 @@ function dutchFlag(inputArray){
     entriesArray.push(entry);
     entryCountArray.push(0);
   }
+
   const sortedEntriesArray = entriesArray.sort();
   inputArray.forEach((element) => {
     if(element === sortedEntriesArray[0]){
@@ -32,6 +33,7 @@ function dutchFlag(inputArray){
      entryCountArray[2] = entryCountArray[2] - 1;
    }
  }
+ // console.log(entryCountArray, fullSortedArray);
  return fullSortedArray;
 }
 
