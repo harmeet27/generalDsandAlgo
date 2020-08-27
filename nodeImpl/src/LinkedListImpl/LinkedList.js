@@ -5,6 +5,11 @@ constructor(){
   this.head = null;
 }
 
+getHead()
+{
+  return this.head;
+}
+
  add(data, index = null){
    if(index !== null){
      return this._addAtIndex(data, index);
@@ -128,6 +133,22 @@ constructor(){
      temp = temp.next;
    }
    return count;
+ }
+
+ createLoop(index){
+   let temp = this.head;
+   let kthNode = null;
+   let count = 0;
+   while(temp !== null){
+     if(count === index){
+       kthNode = temp;
+       break;
+     }
+     temp = temp.next;
+     count = count + 1;
+   }
+   temp.next = kthNode;
+   return this.head;
  }
 }
 
