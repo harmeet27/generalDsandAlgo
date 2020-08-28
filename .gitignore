@@ -7,7 +7,10 @@ logs/
 /target/
 */out/*
 */out*
+java/src/out/*
 */node_modules/*
+
+/.git/
 
 ### IntelliJ IDEA ###
 .idea
