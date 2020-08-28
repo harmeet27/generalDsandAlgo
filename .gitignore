@@ -5,8 +5,9 @@ target/classes
 logs/
 *.csv
 /target/
+*/out/*
 */out*
-*/node_mdoules/*
+*/node_modules/*
 
 ### IntelliJ IDEA ###
 .idea
