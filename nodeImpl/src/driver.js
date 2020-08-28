@@ -11,6 +11,7 @@ import maxContiguousSubarrayZeroOneHashMap from './Algorithms/subarrays/maxConti
 import kandane from './Algorithms/subarrays/kandane';
 import trappingRainWater from './Algorithms/trappingRainWater';
 import countOfSubarraysWithSumK from './Algorithms/prefetch/countOfSubarraysWithSumK';
+import binarySearch from './Algorithms/searching/binarySearch';
 
 let list = new LinkedList();
 list.add('2');
@@ -117,8 +118,10 @@ const aDnoOfRoomsRequired = arrivalDepartureScheduling([9.00,18.00,9.40,9.50,11.
 // console.log(maxContiguousSubarrayZeroOne([1, 0, 1, 0, 1, 1, 1, 0]));
 // console.log(maxContiguousSubarrayZeroOneHashMap([1, 1, 1, 0, 1, 1, 1]));
 // console.log(maxContiguousSubarrayZeroOneHashMap([1, 0, 1, 0, 1, 1, 1, 0]));
-console.log(kandane([-2, -3, 4, -1, -2, 1, 5, -3]), 'kandane');
-console.log(kandane([1, -1, -2]), 'kandane negative')
+// console.log(kandane([-2, -3, 4, -1, -2, 1, 5, -3]), 'kandane');
+// console.log(kandane([1, -1, -2]), 'kandane negative')
+//
+// console.log('water stored', trappingRainWater([2,0,2]));
+// console.log('count', countOfSubarraysWithSumK([0,0,0,0,0,0,0,0,0,0], 0));
 
-console.log('water stored', trappingRainWater([2,0,2]));
-console.log('count', countOfSubarraysWithSumK([0,0,0,0,0,0,0,0,0,0], 0));
+console.log(binarySearch([-1, 0, 2, 3, 7, 8], 0));
