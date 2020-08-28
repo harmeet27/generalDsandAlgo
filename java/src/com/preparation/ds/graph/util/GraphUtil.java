@@ -9,7 +9,7 @@ public class GraphUtil<E, V> {
     //to obtain adjListOfUndirected graph, in the String[][] only add 2 Nodes for each edge:
     //1. with from to weight
     //2. with to from weight
-    public static HashMap<Integer, List<Node>> obtainAdjacencyList(int totalNodes, String[][] edgesWithWeight) {
+    public static HashMap<Integer, List<Node>> obtainAdjacencyListDirected(int totalNodes, String[][] edgesWithWeight) {
         List<Node> nodes = new LinkedList<>();
         HashMap<Integer, List<Node>> ajdList = new HashMap<>();
         for (int i = 0; i < edgesWithWeight.length; i++) {

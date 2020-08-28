@@ -1,22 +1,135 @@
 package com.preparation;
 
+import java.util.HashMap;
+
 public class Main {
 
-    public static void main(String[] args) {
-	// write your code here
-//        WaterJugRecursion recursion = new WaterJugRecursion();
-//        System.out.println(recursion.canMeasureWater(3,5,4));
+    HashMap<Integer, Node> cache = new HashMap();
+    Node head;
+    Node last;
+    int capacity = 0;
+    int size = 0;
 
-//        WaterJugGraphBFS bfs = new WaterJugGraphBFS();
-//        System.out.println(bfs.canMeasureWater(3,5,4));
+    public Main(int capacity) {
+        cache = new HashMap();
+        this.capacity = capacity;
+    }
 
-//        NonRepeatedLongestSubString subString = new NonRepeatedLongestSubString();
-//        subString.lengthOfLongestSubstring("abcabcbb");
-//        TreeMap treeMap =new TreeMap(Collections.reverseOrder());
-//        SortedSet<Integer> set = new TreeSet();
-//        List<Integer> list = new LinkedList<>(set);
-//        Collections.binarySearch()
-        int snkaesDiff=2;
-        System.out.println(snkaesDiff % 6 == 0 ? snkaesDiff / 6 : (snkaesDiff / 6) + 1);
+    public int get(int key) {
+        Node value = cache.getOrDefault(key, null);
+        if (value != null) {
+            remove(value);
+            add(value);
+
+            return value.val;
+        }
+        return -1;
+    }
+
+    public void put(int key, int value) {
+        if (cache.containsKey(key)) {
+            remove(cache.get(key));
+            add(cache.get(key));
+        } else {
+            Node newNode = new Node(value, null, null);
+            newNode.key=key;
+            if (size == capacity) {
+                Node temp = cache.get(head.key);
+                cache.remove(temp.key);
+                remove(temp);
+                add(newNode);
+                size = size - 1;
+            } else {
+                add(newNode);
+            }
+            cache.put(key, newNode);
+            size += 1;
+        }
+
+    }
+
+    private void add(Node newNode) {
+        if (last == null) {
+            head = newNode;
+            last = head;
+            return;
+        }
+
+        last.next = newNode;
+        newNode.prev = last;
+        last = newNode;
+    }
+
+
+    private void remove(Node removeNode) {
+        if (head == null) {
+            return;
+        }
+
+        //single element
+        if (head == last && head==removeNode) {
+            removeNode.next=null;
+            removeNode.prev=null;
+            head = null;
+            last = null;
+            return;
+        }
+
+        //remove from front
+        if(head==removeNode){
+            head=head.next;
+            head.prev=null;
+            removeNode.next=null;
+            return;
+        }
+
+        //remove from last
+        if(last==removeNode){
+            last=last.prev;
+            removeNode.prev=null;
+            last.next=null;
+            return;
+        }
+
+        Node prevNode = removeNode.prev;
+        prevNode.next = removeNode.next;
+        removeNode.next.prev=prevNode;
+
+        removeNode.next=null;
+        removeNode.prev=null;
+    }
+
+
+    public class Node {
+        public int val;
+        public Node next;
+        public Node prev;
+        public int key;
+
+        public Node(int val, Node next, Node prev) {
+            this.val = val;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+
+    public static void main(String... s) {
+        Main main = new Main(2);
+        main.put(1, 1);
+        main.put(2, 2);
+        System.out.println(main.get(1));
+
+        main.put(3, 3);
+        System.out.println(main.get(2));
+
+        main.put(4, 4);
+        System.out.println(main.get(1));
+        System.out.println(main.get(3));
+        System.out.println(main.get(4));
+//        Main main = new Main(1);
+//        main.put(1,1);
+//        System.out.println(main.get(1));
+
+
     }
 }
