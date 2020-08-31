@@ -65,7 +65,8 @@ public class QuickSortWithPartition {
     public static void main(String... s) {
         QuickSortWithPartition quickSort = new QuickSortWithPartition();
 //        int arr[] = new int[]{8, 4, 3, 2, 1, 9, 11, 2, 5};
-        int arr[] = new int[]{5, 1, 1, 2, 0, 0};
+//        int arr[] = new int[]{5, 1, 1, 2, 0, 0};
+        int arr[] = new int[]{9,7,5,11,12,2,14,3,10,6};
         quickSort.sort(arr);
     }
 }

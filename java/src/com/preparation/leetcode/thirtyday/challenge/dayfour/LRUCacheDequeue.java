@@ -29,21 +29,21 @@ public class LRUCacheDequeue {
 
     public void put(int key, int value) {
         Node newNode = new Node(key, value);
-        if (cache.containsKey(key)) {
-            //reshuffle
-            Node stored = cache.remove(key);
-            stored.value = value;
-            deque.remove(stored);
-            deque.addLast(stored);
-            cache.put(key, stored);
-        } else {
-            if (cache.size() == capacity) {
-                Node removed = deque.removeFirst();
-                cache.remove(removed.key);
-            }
-            deque.addLast(newNode);
-            cache.put(key, newNode);
+        if (this.get(key) != -1) {
+            cache.get(key).value = value;
+            return;
         }
+
+        if (deque.size() == capacity) {
+            this.evict();
+        }
+        deque.addLast(newNode);
+        cache.put(key, newNode);
+    }
+
+    public void evict() {
+        Node node = deque.removeFirst();
+        cache.remove(node.key);
     }
 
     class Node {

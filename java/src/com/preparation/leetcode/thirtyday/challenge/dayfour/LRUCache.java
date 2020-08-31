@@ -30,13 +30,11 @@ public class LRUCache {
     HashMap<Integer, Node> map = new HashMap();
     int size = 0;
     int capacity = 0;
-    Node head;
-    Node last;
+    private DoublyLinkedList dll;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
-        head = null;
-        last = null;
+        this.dll = new DoublyLinkedList();
     }
 
     public int get(int key) {
@@ -44,25 +42,68 @@ public class LRUCache {
             return -1;
         }
         Node node = map.get(key);
-        remove(node);
-        add(node);
-
+        dll.remove(node); //size++ and size-- will be even out here
+        dll.add(node);
         return node.value;
 
     }
 
     public void put(int key, int value) {
-        if (map.containsKey(key)) {
-            Node node = map.get(key);
-            node.value = value;
-            remove(node);
-            add(node);
-        } else {
-            Node node = new Node(key, value, null, null);
-            if (size == capacity) {
-                remove(head);
+        if (this.get(key) != -1) {
+            this.map.get(key).value = value;
+            return;
+        }
+
+        if (size == capacity) {
+            this.evict();
+        }
+        Node node = new Node(key, value, null, null);
+        dll.add(node);
+        size++;
+        map.put(key, node);
+    }
+
+    public void evict() {
+        size--;
+        map.remove(dll.head.key);
+        dll.remove(dll.head);
+    }
+
+    class DoublyLinkedList {
+        Node head;
+        Node last;
+
+        void add(Node node) {
+            if (head == null) {
+                head = node;
+                last = node;
+            } else {
+                last.next = node;
+                node.prev = last;
+                node.next = null;
+                last = node;
             }
-            add(node);
+        }
+
+        void remove(Node node) {
+
+            if (node == head) {
+                Node temp = head;
+                if (head != last) {
+                    head = head.next;
+                    temp.next = null;
+                    head.prev = null;
+                } else {
+                    head = null;
+                }
+            } else if (node == last) {
+                node.prev.next = null;
+                last = node.prev;
+                node.prev = null;
+            } else {
+                node.prev.next = node.next;
+                node.next.prev = node.prev;
+            }
         }
     }
 
@@ -80,42 +121,6 @@ public class LRUCache {
         }
     }
 
-    private void add(Node node) {
-        if (head == null) {
-            head = node;
-            last = node;
-        } else {
-            last.next = node;
-            node.prev = last;
-            node.next = null;
-            last = node;
-        }
-        map.put(node.key, node);
-        size++;
-    }
-
-    private void remove(Node node) {
-
-        if (node == head) {
-            Node temp = head;
-            if (head != last) {
-                head = head.next;
-                temp.next = null;
-                head.prev = null;
-            } else {
-                head = null;
-            }
-        } else if (node == last) {
-            node.prev.next = null;
-            last = node.prev;
-            node.prev = null;
-        } else {
-            node.prev.next = node.next;
-            node.next.prev = node.prev;
-        }
-        map.remove(node.key);
-        size--;
-    }
 
     public static void main(String[] s) {
         LRUCache cache = new LRUCache(2 /* capacity */);
