@@ -13,6 +13,8 @@ import trappingRainWater from './Algorithms/trappingRainWater';
 import countOfSubarraysWithSumK from './Algorithms/prefetch/countOfSubarraysWithSumK';
 import binarySearch from './Algorithms/searching/binarySearch';
 import selectionSort from './Algorithms/sorting/selectionSort';
+import insertionSort from './Algorithms/sorting/insertionSort';
+import LRU from './Algorithms/cache/LRU';
 
 let list = new LinkedList();
 list.add('2');
@@ -127,4 +129,18 @@ const aDnoOfRoomsRequired = arrivalDepartureScheduling([9.00,18.00,9.40,9.50,11.
 
 // console.log(binarySearch([-1, 0, 2, 3, 7, 8], 0));
 // console.log(selectionSort([5,2,3,1]));
+
 console.log(selectionSort([5,1,1,2,0,0]));
+console.log(insertionSort([5,1,1,2,0,0]));
+const cache = new LRU(4);
+cache.post(1);
+cache.post(2);
+cache.post(3);
+cache.get(2);
+cache.getCache();
+cache.post(4);
+cache.post(7);
+cache.get(4);
+cache.get(3);
+cache.getCache();
+cache.getSize();
