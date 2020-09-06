@@ -133,14 +133,11 @@ const aDnoOfRoomsRequired = arrivalDepartureScheduling([9.00,18.00,9.40,9.50,11.
 console.log(selectionSort([5,1,1,2,0,0]));
 console.log(insertionSort([5,1,1,2,0,0]));
 const cache = new LRU(4);
-cache.post(1);
-cache.post(2);
-cache.post(3);
-cache.get(2);
+cache.post(1,1);
+cache.post(2,3);
+cache.post(3,4);
+cache.post(4,5);
 cache.getCache();
-cache.post(4);
-cache.post(7);
-cache.get(4);
 cache.get(3);
 cache.getCache();
 cache.getSize();

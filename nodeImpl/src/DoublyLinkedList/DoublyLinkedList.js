@@ -18,17 +18,17 @@ class DoublyLinkedList{
 
   add(data){
     const node = new Node(data, null, null);
-    if(this.head === null){
-      this.head = node;
-      this.tail = node;
-      return this.head;
-    } else {
-      this.tail.next = node;
-      node.prev = this.tail;
-      node.next = null;
-      this.tail = node;
-    }
-    return node;
+   if(this.head === null){
+     this.head = node;
+     this.tail = node;
+     return this.head;
+   } else {
+     this.tail.next = node;
+     node.prev = this.tail;
+     node.next = null;
+     this.tail = node;
+   }
+   return node;
 }
 
 remove(node){
@@ -36,21 +36,23 @@ remove(node){
   const prevNode = node.prev;
   if(node === this.head){
     this.head = this.head.next
+    node.next = null;
+    node.prev = null;
     return this.head;
   }
   if(node === this.tail){
+    const newTail = this.tail.prev;
     this.tail.prev = null;
+    this.tail = newTail;
+    node.next = null;
+    node.prev = null;
     return this.head;
   }
-  if(prevNode !== null){
   prevNode.next = nextNode;
-  }
-  if(nextNode !== null){
   nextNode.prev = prevNode;
-  }
   node.next = null;
   node.prev = null;
-  return this.head;;
+  return node;
 }
 
 getSize(){
@@ -71,7 +73,7 @@ display(){
     temp =  temp.next;
   }
   console.log(string);
-  // return string;
+  return string;
 }
 
 }
