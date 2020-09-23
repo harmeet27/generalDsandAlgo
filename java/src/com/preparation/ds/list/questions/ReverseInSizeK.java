@@ -1,7 +1,9 @@
 package com.preparation.ds.list.questions;
 
 import java.util.AbstractMap;
+import java.util.Deque;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 /**
@@ -144,6 +146,7 @@ public class ReverseInSizeK {
             System.out.print(head.val+"--> ");
             head=head.next;
         }
+
     }
 
 }
