@@ -6,6 +6,10 @@ import java.util.*;
 
 
 /**
+ * TestCase
+ * NOdes Edges
+ * start end
+ * source
  * 1
  * 4 4
  * 1 2 24
@@ -46,7 +50,7 @@ public class Dijkstra {
         history.add(source);
         queue.addAll(adjList.get(source));
         while (history.size() != records.size() && !queue.isEmpty()) {
-            Node minNode = queue.poll();
+            Node minNode = queue.poll(); //from ,to
             if (!history.contains(minNode.to)) {
                 history.add(minNode.to);
                 List<Node> children = adjList.get(minNode.to);

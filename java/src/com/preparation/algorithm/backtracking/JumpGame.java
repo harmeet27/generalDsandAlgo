@@ -33,6 +33,23 @@ import java.util.Stack;
  */
 public class JumpGame {
 
+    public boolean canJumpOptimised(int[] nums) {
+        boolean isPossible = false;
+        int reach = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (reach >= i) {
+                if (i == nums.length - 1) {
+                    isPossible = true;
+                }
+                reach = Math.max(reach, (i + nums[i]));
+            } else {
+                break;
+            }
+        }
+
+        return isPossible;
+    }
+
     public static boolean canJump(int[] nums) {
         HashSet<Integer> visitedIndex = new HashSet<>();
         boolean canVisit = false;

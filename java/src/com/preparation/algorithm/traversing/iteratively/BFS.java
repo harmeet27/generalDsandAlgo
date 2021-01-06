@@ -11,6 +11,46 @@ import java.util.Queue;
  * * 3. Run a loop till the queue is not empty.
  * * 4. Pop the element from the queue and print the element.
  * * 5. For every adjacent and unvsisted node of current node, mark the node and insert it in the queue.
+ * <p>
+ * <p>
+ * adList/adjMatrix --> findNeighbours() --> eficiency
+ * <p>
+ * Curretn BFS: E eges
+ * 1,2
+ * 1,3
+ * 1,5
+ * 2,3
+ * 2,7
+ * 3,4
+ * <p>
+ * 1 --> 2,3,5 (o(1))
+ * 2 --> 3,7
+ * 4 -->4
+ * <p>
+ * findNeightbours(integer) --> E >> V --> V   --> E+V
+ * quue.addAll(findNeighbous(Integer))
+ * visited:
+ * HashSet<Integer>
+ * <p>
+ * Maze(n*m) --> matrx x , input , neighbour  --> o(1)
+ * x+1,y
+ * x-1,y
+ * x,y+1
+ * x,y-1
+ * cell
+ * Visited --> boolean[n][m]  true/false n,m cell
+ * <p>
+ * multiSources: List<Sources>
+ * <p>
+ * queue.add(if 2)
+ * <p>
+ * <p>
+ * 0,1,2
+ * 0,0,0
+ * 0,2,1
+ * <p>
+ * 1--> fresh
+ * 2--> rotten
  */
 public class BFS {
 
@@ -46,6 +86,7 @@ public class BFS {
         Queue<Node> queue = new LinkedList<>();
         queue.add(new Node(x, y));
 
+        //dry run
         while (!queue.isEmpty()) {
             Node removed = queue.poll();
             visited[removed.i][removed.j] = true;
@@ -53,7 +94,7 @@ public class BFS {
             if (maze[removed.i][removed.j] == destinationValue) {
 
 //                found = removed.count;
-                found=true;
+                found = true;
                 break;
             }
 
@@ -62,7 +103,7 @@ public class BFS {
             List<Node> avialableNeightbours = neightbourNodes(maze, removed.i, removed.j);
             for (Node node : avialableNeightbours) {
                 if (visited[node.i][node.j] == false) {
-//                    node.count = removed.count+1;
+//                    node.distacnce = removed.distance+constant; //distance --> level , level , queue
                     queue.add(node);
                 }
             }

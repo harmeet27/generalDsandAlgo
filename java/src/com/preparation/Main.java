@@ -1,5 +1,7 @@
 package com.preparation;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 
 public class Main {
@@ -32,7 +34,7 @@ public class Main {
             add(cache.get(key));
         } else {
             Node newNode = new Node(value, null, null);
-            newNode.key=key;
+            newNode.key = key;
             if (size == capacity) {
                 Node temp = cache.get(head.key);
                 cache.remove(temp.key);
@@ -67,36 +69,36 @@ public class Main {
         }
 
         //single element
-        if (head == last && head==removeNode) {
-            removeNode.next=null;
-            removeNode.prev=null;
+        if (head == last && head == removeNode) {
+            removeNode.next = null;
+            removeNode.prev = null;
             head = null;
             last = null;
             return;
         }
 
         //remove from front
-        if(head==removeNode){
-            head=head.next;
-            head.prev=null;
-            removeNode.next=null;
+        if (head == removeNode) {
+            head = head.next;
+            head.prev = null;
+            removeNode.next = null;
             return;
         }
 
         //remove from last
-        if(last==removeNode){
-            last=last.prev;
-            removeNode.prev=null;
-            last.next=null;
+        if (last == removeNode) {
+            last = last.prev;
+            removeNode.prev = null;
+            last.next = null;
             return;
         }
 
         Node prevNode = removeNode.prev;
         prevNode.next = removeNode.next;
-        removeNode.next.prev=prevNode;
+        removeNode.next.prev = prevNode;
 
-        removeNode.next=null;
-        removeNode.prev=null;
+        removeNode.next = null;
+        removeNode.prev = null;
     }
 
 
@@ -114,22 +116,11 @@ public class Main {
     }
 
     public static void main(String... s) {
-        Main main = new Main(2);
-        main.put(1, 1);
-        main.put(2, 2);
-        System.out.println(main.get(1));
-
-        main.put(3, 3);
-        System.out.println(main.get(2));
-
-        main.put(4, 4);
-        System.out.println(main.get(1));
-        System.out.println(main.get(3));
-        System.out.println(main.get(4));
-//        Main main = new Main(1);
-//        main.put(1,1);
-//        System.out.println(main.get(1));
-
-
+        BigDecimal decimal = new BigDecimal(597582.40);
+        BigDecimal num = decimal.divide(BigDecimal.valueOf(1000000));
+        BigDecimal roundedDec = num.setScale(0, RoundingMode.HALF_UP);
+//        BigDecimal roundedDecimal = roundedDec.setScale(2);
+        int n = roundedDec.intValue();
+        System.out.println(n);
     }
 }

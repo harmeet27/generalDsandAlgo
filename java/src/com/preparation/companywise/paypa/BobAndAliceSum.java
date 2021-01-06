@@ -3,9 +3,14 @@ package com.preparation.companywise.paypa;
 /**
  * Problem Statement:
  * <p>
- * A Subarray means the part of the array formed by removing zero or more elements from either side of the array. A Subarray is represented as [X,Y] that means it contains the elements, A[X], A[X+1]......A[Y]
+ * A Subarray means the part of the array formed by removing zero or more elements
+ * from either side of the array. A Subarray is represented as [X,Y] that means it contains the elements, A[X], A[X+1]......A[Y]
  * <p>
- * There is an Array of size N and given K subarrays. Alice and Bob are asked to find the sum of all the sums obtained from each subarray. Alice works on the given array itself where as Bob wanted to rearrange the array optimally such as the given subarrays would maximise the sum.
+ * There is an Array of size N and given K subarrays.
+ * Alice and Bob are asked to find the sum of all the sums obtained from each subarray.
+ * Alice works on the given array itself where as
+ * Bob wanted to rearrange the array optimally such as the given subarrays would
+ * maximise the sum.
  * <p>
  * Find the difference between sums of Bob and Alice.
  * <p>

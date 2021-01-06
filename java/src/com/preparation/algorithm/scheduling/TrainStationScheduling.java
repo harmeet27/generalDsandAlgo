@@ -29,7 +29,7 @@ package com.preparation.algorithm.scheduling;
  * 3. If yes, add it in the same station and keep the count as it is.
  * 4. If not, add a new record in the map, with count++;
  * <p>
- * Time: o(n)
+ * Time: o(n*k) where k is keys or stations in map for traversing
  * sspace : 0(n)
  *
  * Approach 3:
