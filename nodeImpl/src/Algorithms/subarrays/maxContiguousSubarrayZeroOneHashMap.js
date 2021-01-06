@@ -3,7 +3,7 @@ function maxContiguousSubarrayZeroOneHashMap(inputArray){
 let sumTrackObject = { '0': -1};
 let cumulativeSum = 0;
 // let startIndex = 0;
-// let endIndex = 0;
+// let endIndex = 0;  // 1 1 1 0 1 1 1
 let length = 0;
 while(i < inputArray.length){
 cumulativeSum = inputArray[i] === 0 ? cumulativeSum - 1 : cumulativeSum + inputArray[i];
