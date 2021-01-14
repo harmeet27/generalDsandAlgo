@@ -18,6 +18,7 @@ public class RotatedArray {
             if (target == nums[mid])
                 return mid;
             else if (nums[mid] <= nums[right]) {
+                //sorted
                 if (target > nums[mid] && target <= nums[right]) {
                     left = mid + 1;
                 } else
