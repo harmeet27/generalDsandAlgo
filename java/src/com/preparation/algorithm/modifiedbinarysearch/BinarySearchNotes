@@ -1,0 +1,19 @@
+BS:
+Property:
+A. if the element is not found in binarySearch then after the end of while loop. start and end will be pointing to the
+    neighbours of that element, if it was there.
+
+    meaning start --> floor
+    end --> ceil
+
+    this is one of the way to find ceil and floor.
+
+1. FindCeil/floor
+2. First and last occurence, count of an element.
+3. element in matrix
+4. rotated element, search in rotated array.
+5. peak element.
+6. Bitonic array --> first increasing then decreasing and arr[i]!=arr[i+1] for all i
+    Bitonic Array will only have one peak element always.
+
+7. Allocate pages of books(Hard)
