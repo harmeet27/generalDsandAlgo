@@ -23,14 +23,15 @@ public class CeilOfAnElementInASortedArray {
         int start = arr[0];
         int end = arr.length - 1;
         while (start <= end) {
-            int mid = start + (end - start) / 2;
+            int mid = start + (end - start) / 2; // end MAX_VALUE (start+end/2)
+            // 3,6,8,10,12,15  -->6
 
             if (arr[mid] == number) {
                 return arr[mid];
             } else if (arr[mid] > number) {
                 end = mid - 1;
             } else if (arr[mid] < number) {
-                floor = Math.max(floor, arr[mid]);
+//                floor = Math.max(floor, arr[mid]);
                 start = mid + 1;
             }
 

@@ -44,7 +44,6 @@ public class SubarrayEqualNumberOf01 {
 
         }
 
-
         return maxLength;
     }
 

@@ -3,9 +3,9 @@ package com.preparation.algorithm.dp.grokkingDPPattern.palindromicsubsequence;
 import java.util.Arrays;
 
 /**
- * Algo:
+ * Algorithm:
  * Based on that if we reverse the original string and perform a Longest common subsequence, it will result in the
- * the longest Palindromic subsequnce of the String.
+ * the longest Palindromic subsequence of the String.
  */
 public class LongestPalindromicSubsequnce {
 
