@@ -1,4 +1,4 @@
-package com.preparation.algorithm;
+package com.preparation.ds.array;
 
 /**
  * The Boyer-Moore algorithm is presented in this paper: Boyer-Moore Majority Vote Algorithm.
