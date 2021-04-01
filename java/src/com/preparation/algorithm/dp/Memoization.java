@@ -31,6 +31,12 @@ package com.preparation.algorithm.dp;
  * 		return cache[parameter1][parameter2][parameter3][...];
  *    }
  * }
+ *
+ *
+ *
+ * Approach 1:
+ * 1. For bounded knapsack : Use include/exclude  --> may not be good for cases where we can traverse back to prev values.
+ * 2. For unbounded Knapsack : use for with dfs type
  */
 public class Memoization {
 }

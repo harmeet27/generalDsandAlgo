@@ -1,7 +1,5 @@
 package com.preparation;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.HashMap;
 
 public class Main {
@@ -116,11 +114,6 @@ public class Main {
     }
 
     public static void main(String... s) {
-        BigDecimal decimal = new BigDecimal(597582.40);
-        BigDecimal num = decimal.divide(BigDecimal.valueOf(1000000));
-        BigDecimal roundedDec = num.setScale(0, RoundingMode.HALF_UP);
-//        BigDecimal roundedDecimal = roundedDec.setScale(2);
-        int n = roundedDec.intValue();
-        System.out.println(n);
+
     }
 }

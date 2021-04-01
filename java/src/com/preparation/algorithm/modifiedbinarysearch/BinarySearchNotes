@@ -15,5 +15,9 @@ A. if the element is not found in binarySearch then after the end of while loop.
 5. peak element.
 6. Bitonic array --> first increasing then decreasing and arr[i]!=arr[i+1] for all i
     Bitonic Array will only have one peak element always.
+7. Find A Missing number in array of all other duplicates: o(logn)
+    Hint: missing number would always be on the side where there are odd number of elements excluding.
+    itself(middle)
+8. Allocate pages of books(Hard)
 
-7. Allocate pages of books(Hard)
+
