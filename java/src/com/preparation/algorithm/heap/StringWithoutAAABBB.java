@@ -98,6 +98,8 @@ public class StringWithoutAAABBB {
                         if (topElement.value == 0) {
                             queue.poll();
                         }
+                        
+
                     }
                 } else {
                     //not last and curr character same.
