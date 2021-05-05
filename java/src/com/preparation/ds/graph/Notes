@@ -1,5 +1,47 @@
-For Path Finding: (we can use BFS,DFS, or Dijkstra)
+Types of graph:
+1. Regular Graph : each vertices has the same degree.
+2. Complete graph : each vertex is connected with all other vertices directly. (degree v-1 each)
+3. Connected graph : all nodes are reachable from all other nodes either directly/indirectly.
+4. Directed graph  with direction
+5. Undirected graph  bi direction
+6. Acyclic graph  no cycles like DAG  directed Acyclic graph
+7. Strongly connected Components  can be thought of as self contained cycles within a DIRECTED graph where every vertex in a given cycle can reach every other vertex in the same cycle.
 
+
+Algorithms:
+1. MST:
+    1. Kruskal's Algorithm
+    2. Prim's Algorithm
+
+2. SHORTEST PATH PROBLEM FROM Source to Target Vertex
+    1. BFS : unweighted graph(first node encountered will be the shortest path)
+    2. Dijkstra : weighted and no –ve edge. (BFS + priorityQueue over queue)
+    3. Bellman Ford: weighted and considers –ve edge.
+
+3. ALL PATH SHORTEST DISTANCE:
+    1. Floyd warshall
+
+4. Connectivity: Does path exist between A and B?
+    1. BFS
+    2. DFS
+
+5. Negative cycles : Does negative cycle exist --> might not want to consider such cycle in path
+    1. Bellman Ford
+    2. Floyd Warshall
+
+6. Strongly connected components:
+    1. Kosaraju
+    2. Tarjan’s
+
+7. TSP : Travelling salesman problem  visiting all other vertices exactly once and come back to the source vertex. It is an NP-hard problem
+
+8. Network Flow:
+    1. Ford-fulkerson
+    2. Edmonds karp and Dinic algorithm
+
+9. Bridges in a graph
+
+For Path Finding: (we can use BFS,DFS, or Dijkstra)
 Dijkstra = BFS + priorityQueue over normal Queue.
 
 1. if path has weights, then Dijkstra is preferred (though can be solved using BFS also)
