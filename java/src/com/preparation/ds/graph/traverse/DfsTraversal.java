@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 
+/**
+ * Time Complexity O(V+E)
+ *
+ * @param <V>
+ */
 public class DfsTraversal<V> {
 
     //traverse back will not happen as in case of recursion

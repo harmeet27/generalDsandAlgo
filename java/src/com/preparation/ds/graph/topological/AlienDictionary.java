@@ -72,7 +72,7 @@ public class AlienDictionary {
         StringBuilder builder = new StringBuilder();
         Queue<Character> queue = new LinkedList<>();
 
-        //add all nodes which have inDegree of 0 to queue.
+        //add all nodes which have inDegree of 0 to queue intially before processing.
         List<Character> ch = findNodeWithDegree0(inDegree, adjList);
         queue.addAll(ch);
 

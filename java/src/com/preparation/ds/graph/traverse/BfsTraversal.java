@@ -8,6 +8,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Time Complexity O(V+E)
+ *
+ * @param <V>
+ */
 public class BfsTraversal<V> {
 
     public List<V> bfsTraversal(V root, HashMap<V, List<V>> adjList) {

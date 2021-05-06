@@ -4,8 +4,10 @@ Types of graph:
 3. Connected graph : all nodes are reachable from all other nodes either directly/indirectly.
 4. Directed graph  with direction
 5. Undirected graph  bi direction
-6. Acyclic graph  no cycles like DAG  directed Acyclic graph
-7. Strongly connected Components  can be thought of as self contained cycles within a DIRECTED graph where every vertex in a given cycle can reach every other vertex in the same cycle.
+6. Acyclic graph  no cycles like DAG  directed Acyclic graph --> All trees are DAG, but all DAGs are not trees
+7. Strongly connected Components  can be thought of as self contained cycles within a
+    DIRECTED graph where every vertex in a given cycle can reach every other vertex in
+    the same cycle.
 
 
 Algorithms:
@@ -17,35 +19,62 @@ Algorithms:
     1. BFS : unweighted graph(first node encountered will be the shortest path)
     2. Dijkstra : weighted and no –ve edge. (BFS + priorityQueue over queue)
     3. Bellman Ford: weighted and considers –ve edge.
+    4. Topological sort can be used for +ve and -ve edge to find shortest distance,
+        provided graph is DAG.
 
-3. ALL PATH SHORTEST DISTANCE:
+3. LONGEST PATH FROM SOURCE TO DESTINATION : NP-Hard but if DAG, can be solved in O(V+E):
+    Trick : multiply all edge values by -1 and find the shortest path and then multiply
+            the edge values by -1 again.
+
+4. ALL PATH SHORTEST DISTANCE:
     1. Floyd warshall
 
-4. Connectivity: Does path exist between A and B?
+5. Connectivity: Does path exist between A and B?
     1. BFS
     2. DFS
 
-5. Negative cycles : Does negative cycle exist --> might not want to consider such cycle in path
+6. Negative cycles : Does negative cycle exist --> might not want to consider such cycle in path
     1. Bellman Ford
     2. Floyd Warshall
 
-6. Strongly connected components:
+7. Strongly connected components:
     1. Kosaraju
-    2. Tarjan’s
+    2. Tarjan’s : also used for finding if the graphs contain cycle.
 
-7. TSP : Travelling salesman problem  visiting all other vertices exactly once and come back to the source vertex. It is an NP-hard problem
+8. TSP : Travelling salesman problem  visiting all other vertices exactly once and come back to the source vertex. It is an NP-hard problem
 
-8. Network Flow:
+9. Network Flow:
     1. Ford-fulkerson
     2. Edmonds karp and Dinic algorithm
 
-9. Bridges in a graph
+10. Bridges in a graph
+
+11. Topological sort: Find relation/dependecy in graph which needs to be built first than the target
+    1. Example maven dependency tree
+    2. Gradle build tree
+    3. Recipe making instructions.
+    4. Alien dictionary etc.
+    Time Complexity : O(V+E)
+    Topological orderings are not unique
+
+    Topological can only be applied to DAG , if cycle is there it cant be done, hence cyclic
+    dependencies are always issue.
 
 For Path Finding: (we can use BFS,DFS, or Dijkstra)
-Dijkstra = BFS + priorityQueue over normal Queue.
+
+Dijkstra = BFS + priorityQueue over normal Queue(becomes DFS with priority Queue since
+                        since we are randomly visiting element than level order)
+           One constraint for Dijkstra algo is that the graph must only contain +ve edge
+           weights. This constraint is imposed to ensure that once a node has been visited
+           /relaxed its optimcal distance cannot be improved.
+
+           This property is especially important because it enables Dijkstra's algorithm
+           to act in a greedy manner by always selecting the next most promising node.
 
 1. if path has weights, then Dijkstra is preferred (though can be solved using BFS also)
-2. If path has -ve weights also, simple backtracking + dp is preferred called as bellman ford
+2. If path has -ve weights also,
+    Topological sort(if DAG) or
+    simple backtracking + dp is preferred called as bellman ford
     The Bellman-Ford is pretty much the same as the DP approach except that it is more space-optimized.
     The Bellman–Ford algorithm is an algorithm that computes shortest paths from a single source vertex to all of the other vertices
     in a weighted digraph. It is slower than Dijkstra's algorithm for the same problem, but more versatile, as it is capable of handling graphs
