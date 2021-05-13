@@ -52,7 +52,45 @@ Algorithms:
     1. Kosaraju
     2. Tarjan’s : also used for finding if the graphs contain cycle.
 
-8. TSP : Travelling salesman problem  visiting all other vertices exactly once and come back to the source vertex. It is an NP-hard problem
+8. TSP : Travelling salesman problem  visiting all other vertices exactly once and come back
+        to the source vertex. It is an NP-hard problem
+        Traveling Salesman Problem
+
+        BruteForce : O(n!)
+        DP : (N*2^n)
+
+        Given a set of cities and the cost of travel between each pair of them,
+        the traveling salesman problem(TSP) is to find the cheapest way of visiting all
+        of the cities and returning to your starting point.
+
+        The simplicity of the statement of the problem is deceptive.
+        TSP is one of the most intensely studied problems in computational mathematics and
+        yet no effective solution method is known for the general case.
+        Indeed, the resolution of the TSP would settle the P versus NP problem and fetch a
+        $1,000,000 prize from the Clay Mathematics Institute.
+
+        Minimum Spanning Tree Problem(MST)
+        Consider this problem - Given a set of cities how can you connect all the cities
+        such that the distances between them are minimized. It’s pretty obvious that the
+        cities can have multiple routes connecting them. To solve this we can use
+        Greedy Algorithm approach.
+
+        Expanding on this idea - in graph theory, a Spanning Tree of an undirected graph
+        is a subgraph, that is a tree, which includes all of the vertices of G,
+        with minimum possible number of edges.
+
+        A Graph can have multiple spanning trees. And the problem asks us to find the one
+        with minimum edge costs.
+
+  a. Hamiltonian cycle : a subset of TSP,
+                        in an undirected graph is a path that visits each vertex exactly once.
+                        except the start, where it comes back to.
+                        Example
+                         {0, 1, 2, 4, 3, 0}.
+
+                         Tsp is to find minimum Hamiltonian cycle
+                         Hamiltonian cycle is to find all paths which start from source
+                         and come back to it, visiting all other exactly once.
 
 9. Network Flow:
     1. Ford-fulkerson

@@ -1,7 +1,5 @@
 package com.preparation.algorithm.modifiedbinarysearch;
 
-import java.util.Arrays;
-
 /**
  * Given a sorted array and a value x, the floor of x is the largest element in array smaller than or equal to x. Write efficient functions to find floor of x.
  */
@@ -42,7 +40,7 @@ public class CeilOfAnElementInASortedArray {
 
     public static void main(String[] s) {
         System.out.println(floorSortedArray(new int[]{1, 2, 8, 10, 10, 12, 19}, 5));
-        System.out.println(floorSortedArray(new int[]{1, 2, 8, 10, 10, 12, 19}, 20));
+        System.out.println(floorSortedArray(new int[]{1, 2, 8, 10, 10, 12, 19}, 10));
         System.out.println(floorSortedArray(new int[]{1, 2, 8, 10, 10, 12, 19}, 0));
     }
 }

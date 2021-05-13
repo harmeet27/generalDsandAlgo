@@ -1,7 +1,5 @@
 package com.preparation.algorithm.modifiedbinarysearch;
 
-import java.util.Arrays;
-
 /**
  * Array of sorted and repeated elements except one element. Find it.
  */

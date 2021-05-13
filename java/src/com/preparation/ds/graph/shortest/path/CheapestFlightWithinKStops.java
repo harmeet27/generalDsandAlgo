@@ -1,29 +1,30 @@
 package com.preparation.ds.graph.shortest.path;
 
+import com.preparation.ds.graph.model.Edge;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
+/**
+ * Algo 1: Simple memoization with DP E*V
+ * Algo2: DFS (priorityQueue) : V+ElogV
+ */
 public class CheapestFlightWithinKStops {
 
-    HashMap<Integer, List<Destination>> adjList = new HashMap<>();
-
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
-        for (int i = 0; i < flights.length; i++) {
-            List<Destination> destinations = adjList.getOrDefault(flights[i][0], new LinkedList());
-            destinations.add(new Destination(flights[i][1], flights[i][2]));
-            adjList.put(flights[i][0], destinations);
-        }
+        Map<Integer, List<Edge>> graph = buildGraph(flights);
 
-        int[][] memo = new int[n][K + 2];
+        int[][] memo = new int[n + 1][K + 2];
         Arrays.stream(memo).forEach(arr -> Arrays.fill(arr, Integer.MAX_VALUE));
-        int total = findPrice(src,new Destination(src, 0), dst, K + 1, memo);
+
+        int total = findPrice(graph, src, dst, K + 1, memo);
         return total == Integer.MAX_VALUE ? -1 : total;
-        // return minSum==Integer.MAX_VALUE?-1:minSum;
     }
 
-    private int findPrice(int src, Destination destination, int dst, int k, int[][] memo) {
+    private int findPrice(Map<Integer, List<Edge>> graph, int src, int dst, int k, int[][] memo) {
 
         if (src == dst) {
             //destination reached
@@ -35,12 +36,12 @@ public class CheapestFlightWithinKStops {
             return memo[src][k];
         }
 
-        if (adjList.containsKey(src) && adjList.get(src) != null) {
+        if (graph.containsKey(src) && graph.get(src) != null) {
             if (k - 1 >= 0) {
-                for (Destination dest : adjList.get(src)) {
-                    int price = findPrice(dest.destination,dest, dst, k - 1, memo);
+                for (Edge child : graph.get(src)) {
+                    int price = findPrice(graph, child.to, dst, k - 1, memo);
                     if (price != Integer.MAX_VALUE) {
-                        memo[src][k] = Math.min(memo[src][k], destination.cost + price);
+                        memo[src][k] = Math.min(memo[src][k], child.weight + price);
                     }
                 }
             }
@@ -49,14 +50,15 @@ public class CheapestFlightWithinKStops {
         return memo[src][k];
     }
 
-    static class Destination {
-        public int destination;
-        public int cost;
-
-        public Destination(int destination, int cost) {
-            this.destination = destination;
-            this.cost = cost;
+    private static Map<Integer, List<Edge>> buildGraph(int[][] flights) {
+        Map<Integer, List<Edge>> graph = new HashMap();
+        for (int i = 0; i < flights.length; i++) {
+            List<Edge> edges = graph.getOrDefault(flights[i][0], new LinkedList());
+            edges.add(new Edge(flights[i][1], flights[i][2]));
+            graph.put(flights[i][0], edges);
         }
+
+        return graph;
     }
 
 

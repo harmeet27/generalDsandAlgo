@@ -41,8 +41,8 @@ import java.util.Arrays;
  * hefg
  * dhck
  * dkhc
- * Sample Output 0
  *
+ * Sample Output 0
  * ba
  * no answer
  * hegf
