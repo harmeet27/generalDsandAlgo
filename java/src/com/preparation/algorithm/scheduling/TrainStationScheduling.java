@@ -34,6 +34,8 @@ package com.preparation.algorithm.scheduling;
  *
  * Approach 3:
  * Use Heap
+ *
+ * https://blog.usejournal.com/minimum-platforms-hackerrank-f86ed28d3a50
  * *
  */
 public class TrainStationScheduling {

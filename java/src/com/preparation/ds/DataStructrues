@@ -43,7 +43,7 @@
     4. minPathSum
     5. FindAncestors of a node.
     6. find all nodes at distance k from node --> find ancestors and use it.
-    7. find max subTree : Diameter
+    7. find max subTree : Diameter : Or similar question --> Find the maximum path sum between two leaves of a binary tree
     8. top view, left view, right view
     9. mirror of a tree
 
