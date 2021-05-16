@@ -36,37 +36,38 @@ public class MaxAreaHistogram {
 
     //with Stack o(n) space and time
     public int largestRectangleAreaWithStack(int[] heights) {
-        if(heights==null || heights.length==0){
+        if (heights == null || heights.length == 0) {
             return 0;
         }
 
         int maxArea = 0;
 
         Stack<Integer> stack = new Stack();
-        int i=0;
-        while(i<heights.length){
-            if(stack.isEmpty() || heights[stack.peek()] <= heights[i]){
+        int i = 0;
+        while (i < heights.length) {
+            if (stack.isEmpty() || heights[stack.peek()] <= heights[i]) {
                 stack.push(i);
                 i++;
-            }
-            else{
+            } else {
                 //remove element index
                 int height = heights[stack.pop()];
 
                 //find prev index prior after removing the elemnt
-                int width = stack.isEmpty()?i:i-stack.peek()-1;
-                maxArea = Math.max(maxArea,height*width);
+                int width = stack.isEmpty() ? i : i - stack.peek() - 1;
+                maxArea = Math.max(maxArea, height * width);
             }
         }
 
         //will use the prev i here to compute the remaining
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             int currIndex = stack.pop();
             int height = heights[currIndex];
-            int width = stack.isEmpty()?i:i-stack.peek()-1;
-            maxArea = Math.max(maxArea, height*width);
+            int width = stack.isEmpty() ? i : i - stack.peek() - 1;
+            maxArea = Math.max(maxArea, height * width);
         }
 
         return maxArea;
     }
+
+
 }
