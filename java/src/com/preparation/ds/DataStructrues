@@ -1,6 +1,7 @@
 1. Arrays:
     1. Kandane Algorithm : LongestContinousSum
     2. Bayer Moore Alogrithm : MajorityElement
+           2. Find n/3 majority elemnt using above(2 majElement using Bayer moore)
     3. Sum-k / HashMap(sum-k) : LongestConsecutive problems
     4. Using index as count : CountingSort/ first missing +ve integer
     5. Prefetch sum :
@@ -25,7 +26,7 @@
     12. Clone a linkedlist with random pointer
     13. remove the current node(where you are stnding) in the linkedList. Head not given.
     14. Flatten a linkedList having childNode.
-    15. Reverse in size k
+    15. Reverse in size k --> use start,end of a window.
 
 3. Stack: FIFO
     1. stock span problem

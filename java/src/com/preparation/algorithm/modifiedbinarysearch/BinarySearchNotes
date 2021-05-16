@@ -10,7 +10,10 @@ A. if the element is not found in binarySearch then after the end of while loop.
 
 1. FindCeil/floor
 2. First and last occurence, count of an element.
-3. element in matrix
+3. search in matrix :
+    a. matrix elements are row and col sorted : reduce col,row accordingly
+    b. row is sorted and next row start>prevRowEnd :
+
 4. rotated element, search in rotated array.
 5. peak element.
 6. Bitonic array --> first increasing then decreasing and arr[i]!=arr[i+1] for all i
@@ -18,6 +21,7 @@ A. if the element is not found in binarySearch then after the end of while loop.
 7. Find A Missing number in sorted array of all other duplicates: o(logn)
     Hint: missing number would always be on the side where there are odd number of elements excluding.
     itself(middle)
-8. Allocate pages of books(Hard)
+8. find Number in sorted running stream.
+9. Allocate pages of books(Hard)
 
 

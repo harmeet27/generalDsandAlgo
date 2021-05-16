@@ -1,4 +1,13 @@
-1. Two-Pointers:
+1. SlidingWindow: remove start from range , add end of range.
+    1. Make the biggest number by shifting k elements.
+    2. Maximum sum subarray of size ‘K’ (easy)
+    3. Longest substring with ‘K’ distinct characters (medium)
+    4. Longest Substring with equal number of 0/1.
+    5. String anagrams (hard)
+    6. FindAllSubarraySum (hard) 0(n)
+
+
+2. Two-Pointers:
     1. Find a pair with sum=k, or equal. in  sorted Array
     2. Find a triplet with sum k in sorted Array
     3. LinkedList --> loop detection, lastKthNode, fastPtr,slowPtr
@@ -9,36 +18,41 @@
     8. sort an array of 0/1
     9. Max number of K sum pairs https://leetcode.com/problems/max-number-of-k-sum-pairs/ (Medium)
 
-2. SlidingWindow: remove start from range , add end of range.
-    1. Make the biggest number by shifting k elements.
-    2. Maximum sum subarray of size ‘K’ (easy)
-    3. Longest substring with ‘K’ distinct characters (medium)
-    4. Longest Substring with equal number of 0/1.
-    5. String anagrams (hard)
-    6. FindAllSubarraySum (hard) 0(n)
 
 3. BinarySearch :
-    1. sortedArray : missing number in duplicates of 2n+1, first & last occurence, ceil & floor
-    2. nonSortedArray : peak element, search in rotatedSortedArray, Bitonic Array
+    1. sortedArray : missing number in duplicates of 2n+1, first & last occurence, ceil(just higher than target) & floor(just lower than target)
+    2. nonSortedArray : peak element, search in rotatedSortedArray, Bitonic Array (an array which is first strictly inc and then strictly decreasing and arr[i]!=arr[i+1])
+    3. FindElementInInfiniteSortedArray : find the range first of start,end
+    4. search in matrix :
+           a. matrix elements are row and col sorted : start with topMost element and keep eliminating row,col.
+           b. row is sorted and next row start>prevRowEnd :  find the Ciel from the lastColumn and use that row. ONce found, apply bs on that row.
+
 
 4. MergeIntervals/ Scheduling
     1. Basic 2 condition for collision : (start1>=start2 && start1<=end2) || (start2>=start1 && start2<=end1)
     2. numberOfStations/MeetingRoom : given (start,end) of trains find min stations needed to accomodate / Find meeting rooms needed
     3. Find common Calendar Availability : given times of 2 people (start,end) find available time slot for meeting.
 
+
 5. Sorting:
     1. QuickSort : In an array of nuts and bolts having same number, sort it , you can compare nuts with nuts and bolts with bolts.
+                    https://www.codingninjas.com/blog/2020/12/31/nuts-and-bolts-problem-set-1/#:~:text=It%20is%20a%20type%20of,are%20greater%20when%20ascending%20order.
+                  Another way to ask this question is Lock and Key, a lock can be opened by its key with same number
+
     2. MergeSort
     3. CountingSort: dutch algo, sort 0,1 array
+
 
 6. PrefetchSum :
     1. Add number to range (+50 to 1->3 index) : add to front and subtract from end+1; perform prefetch later on.
     2. used in sliding window as well
 
+
 7. Bitwise:
     1. find missing element in non-sorted duplicated array of 2n+1; -->XOR(^)
     2. find 2 missing element in non-sorted duplicated array of 2n+2;
     3. check odd/even using binary (& | )
+
 
 8. Heap (PriorityQueue)
     1. Find median in running stream
@@ -50,6 +64,7 @@
     7. Rearrange String such that no 2 same characters are adjacent. "aabbacc" --> abcabca
     8. MinRemovalUnique : min removal of each char such that the count of each char is unique.
     9. String without AAABBB
+
 
 9. String
     Search
@@ -68,15 +83,18 @@
            Hint: idea is to keep computing the prefix sum and check whether prefixSum+1 < nextElement if(yes) then prefixSum+1 is the ans
     3. HCF/LCM/10.3 --> 3.3333..  --> 3.(3) --> use remainder than string searching, deciamls repeat if remainder comes same.
 
+
 11. Recursion :
     1. Find HCF/LCM
     2. Find power of a number
     3. Water jug fill
     4. MasterTheorem for time complexity
 
+
 12. Subsets:
     The total number of subsets of a given set of size n is equal to 2^n.
     The total number of subarray = n*(n+1)/2 i.e. time complexity n^2
+
 
 13. Dp: (Memoization TOP-DOWN) , Tabluation : bottom-up
     1. fibonacciNumbers: MinJumpsToReachEnd, Staircase, HouseTheif
@@ -85,8 +103,10 @@
     4. LongestCommonSubstring
     5. LongestCommonSubsequence
 
+
 14. BFS:
     1. Rotten oranges.
+
 
 15. GraphTheory:
     1. BFS

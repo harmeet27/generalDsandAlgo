@@ -14,18 +14,18 @@ import java.util.Map;
  * store the start and end of each reverse operation in LinkedHashMap.
  * At last traverse and link back of each
  * 1. Using HashMap --> O(n) time and space(o(2n)) in worst case.
- *          Algo:
- *          Whenever we encounter i as k, make the prev pointing to the end of this k list as null,
- *          while current is moved forward to next list starting.
- *          Reverse(start) of this k list and store both the start, end of the list in map in order.
- *
- *          Keep doing this.
- *
- *          if i!=k and loop terminates, meaning there are no further k elements in list, in this
- *          case store the start and end as start only.
- *
- *
- * 1. Recusrion
+ * Algo:
+ * Whenever we encounter i as k, make the prev pointing to the end of this k list as null,
+ * while current is moved forward to next list starting.
+ * Reverse(start) of this k list and store both the start, end of the list in map in order.
+ * <p>
+ * Keep doing this.
+ * <p>
+ * if i!=k and loop terminates, meaning there are no further k elements in list, in this
+ * case store the start and end as start only.
+ * <p>
+ * <p>
+ * 1. Recursion
  * 2. Using stack to keep track of last start
  */
 public class ReverseInSizeK {
@@ -34,7 +34,7 @@ public class ReverseInSizeK {
 
     public static ListNode reverseKGroupUsingMap(ListNode head, int k) {
 
-        if(head==null || head.next==null){
+        if (head == null || head.next == null) {
             return head;
         }
 
@@ -51,7 +51,7 @@ public class ReverseInSizeK {
             }
             prev.next = null;
             //for list with no further nodes of size k , keep the end as start only.
-            ListNode end = i==k?reverse(start):start;
+            ListNode end = i == k ? reverse(start) : start;
             AbstractMap.SimpleEntry<ListNode, ListNode> nodes = new AbstractMap.SimpleEntry(end, start);
             map.put(++j, nodes);
         }
@@ -61,9 +61,9 @@ public class ReverseInSizeK {
             previous = map.get(1);
         }
 
-        for (int l=2;l<=map.size();l++) {
+        for (int l = 2; l <= map.size(); l++) {
             ListNode val = previous.getValue();
-            val.next=map.get(l).getKey();
+            val.next = map.get(l).getKey();
             previous = map.get(l);
         }
 
@@ -93,27 +93,32 @@ public class ReverseInSizeK {
         }
     }
 
-    public static ListNode reverseKGroup(ListNode head, int k){
-        if(head==null || head.next==null){
-            return head;
-        }
-        ListNode curr=head;
-        int i=0;
-        ListNode start = head;
-        ListNode prev=null;
-        while(i<k && curr!=null){
-            prev=curr;
-            curr=curr.next;
-            i++;
-        }
-        prev.next=null;
-        if(i!=k){
-            return start;
+    public static ListNode reverseKGroup(ListNode head, int k) {
+        //1->2->3->4->5->6->7 k=3
+        //start:1,4,7
+        //end: 3,6
+        if (head == null) return head;
+
+        ListNode startNode = head;
+        ListNode curr = head;
+        int count = 1;
+
+        while (curr.next != null && count < k) {
+            curr = curr.next;
+            count++;
         }
 
-        ListNode end = reverse(start);
-        start.next=reverseKGroup(curr,k);
-        return end;
+        if (count < k) {
+            //meaning total elements are less than k now --> return head as it is dont reverese this window.
+            return head;
+        }
+
+        ListNode nextIteratorNode = curr.next; //before breaking the current window, store the further.
+        curr.next = null;
+        ListNode endNode = curr;
+        reverse(startNode);
+        startNode.next = reverseKGroup(nextIteratorNode, k);
+        return endNode;
     }
 
 
@@ -140,9 +145,9 @@ public class ReverseInSizeK {
 
 //        ListNode head = reverseKGroupUsingMap(node1, k);
         ListNode head = reverseKGroup(node1, k);
-        while(head!=null){
-            System.out.print(head.val+"--> ");
-            head=head.next;
+        while (head != null) {
+            System.out.print(head.val + "--> ");
+            head = head.next;
         }
 
     }

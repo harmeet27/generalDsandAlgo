@@ -29,7 +29,7 @@ public class CeilOfAnElementInASortedArray {
             } else if (arr[mid] > number) {
                 end = mid - 1;
             } else if (arr[mid] < number) {
-//                floor = Math.max(floor, arr[mid]);
+                floor = Math.max(floor, arr[mid]);
                 start = mid + 1;
             }
 
