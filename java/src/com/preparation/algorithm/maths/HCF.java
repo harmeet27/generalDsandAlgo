@@ -21,10 +21,9 @@ public class HCF {
         }
 
         if (a > b) {
-            return findHcfRecursively(b, a - b);
-        } else {
-            return findHcfRecursively(a, b - a);
+            return findHcfRecursively(a - b, b);
         }
+        return findHcfRecursively(a, b - a);
     }
 
 
@@ -64,7 +63,7 @@ public class HCF {
 
 
     public static void main(String... s) {
-        System.out.println(findHcfRecursively(50, 100));
-        System.out.println(findHcfIteratively(50, 100));
+        System.out.println(findHcfRecursively(50, 101));
+        System.out.println(findHcfIteratively(50, 101));
     }
 }
