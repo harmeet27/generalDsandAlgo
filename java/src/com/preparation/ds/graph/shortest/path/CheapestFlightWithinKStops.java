@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Algo 1: Simple memoization with DP E*V
@@ -77,7 +78,7 @@ public class CheapestFlightWithinKStops {
         int[][] edges = {{0, 1, 100}, {1, 2, 100}, {0, 2, 500}};
         int src = 0, dst = 2, k = 1;
 
-
+        Objects.hash();
         System.out.println(cheap.findCheapestPrice(n, edges, src, dst, k));
     }
 
