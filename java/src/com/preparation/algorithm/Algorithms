@@ -13,7 +13,7 @@
     3. LinkedList --> loop detection, lastKthNode, fastPtr,slowPtr
     4. Merge 2 sortedLinkedList
     5. Move zeroes at end (in same order/not same)
-    6. Dutch flag alogrithm (sort an array of 0,1,2)
+    6. Dutch flag algorithm (sort an array of 0,1,2)
     7. Move zeroes at start.
     8. sort an array of 0/1
     9. Max number of K sum pairs https://leetcode.com/problems/max-number-of-k-sum-pairs/ (Medium)
