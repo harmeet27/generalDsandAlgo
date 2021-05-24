@@ -41,6 +41,9 @@
 
     2. MergeSort
     3. CountingSort: dutch algo, sort 0,1 array
+    4. SelectionSort
+    5. InsertionSort: impact of this on partialSorted array
+    6. Knuth shuffle algorithm : to randomly shuffle elements.
 
 
 6. PrefetchSum :
