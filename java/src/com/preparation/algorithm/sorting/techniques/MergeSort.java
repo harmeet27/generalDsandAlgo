@@ -1,89 +1,68 @@
 package com.preparation.algorithm.sorting.techniques;
 
-import java.util.Arrays;
-
+/**
+ * Divide and conquer(merge)
+ *
+ * In merge sort,
+ *      worst case and average case has same complexities O(n log n).
+ *      Space complexity : o(N) for merge operation.
+ *
+ * Efficiency:
+ * Merge sort is more efficient and works faster than quick sort in case of larger array size or datasets.
+ * whereas
+ *
+ * Quick sort is more efficient and works faster than merge sort in case of smaller array size or datasets.
+ * Sorting method :
+ *
+ * The quick sort is internal sorting method where the data is sorted in main memory.
+ * whereas
+ * The merge sort is external sorting method in which the data that is to be sorted cannot be accommodated in the memory and needed auxiliary memory for sorting.
+ *
+ * Preferred for :
+ * Quick sort is preferred for arrays.
+ * whereas
+ * Merge sort is preferred for linked lists.
+ */
 public class MergeSort {
 
-    public static void sort(int[] arr) {
-        divideAndMerge(arr, 0, arr.length - 1);
+    public int[] mergeSort(int[] arr) {
+        return divide(arr, 0, arr.length - 1);
     }
 
-    private static void divideAndMerge(int[] arr, int l, int r) {
-
+    private int[] divide(int[] arr, int l, int r) {
         if (l >= r) {
-            return;
+            return new int[]{arr[l]};
         }
 
-        int middle = l + (r - l) / 2;
+        int mid = l + (r - l) / 2;
+        int[] first = divide(arr, l, mid);
+        int[] second = divide(arr, mid + 1, r);
 
-        //divide 1st half
-        divideAndMerge(arr, l, middle);
-
-        //divide 2nd half
-        divideAndMerge(arr, middle + 1, r);
-
-        //merge
-        merge(arr, l, middle, r);
+        return merge(first, second);
 
     }
 
-    static void merge(int arr[], int l, int m, int r) {
-        // Find sizes of two subarrays to be merged
-        int n1 = m - l + 1;
-        int n2 = r - m;
 
-        /* Create temp arrays */
-        int L[] = new int[n1];
-        int R[] = new int[n2];
+    private int[] merge(int[] arr1, int[] arr2) {
+        int fptr = 0;
+        int sptr = 0;
+        int idx = 0;
+        int mergedArr[] = new int[arr1.length + arr2.length];
 
-        /*Copy data to temp arrays*/
-        for (int i = 0; i < n1; ++i)
-            L[i] = arr[l + i];
-        for (int j = 0; j < n2; ++j)
-            R[j] = arr[m + 1 + j];
-
-
-        /* Merge the temp arrays */
-
-        // Initial indexes of first and second subarrays
-        int i = 0, j = 0;
-
-        // Initial index of merged subarry array
-        int k = l;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++;
+        while (fptr < arr1.length && sptr < arr2.length) {
+            if (arr1[fptr] <= arr2[sptr]) {
+                mergedArr[idx] = arr1[fptr];
+                fptr++;
             } else {
-                arr[k] = R[j];
-                j++;
+                mergedArr[idx] = arr2[sptr];
+                sptr++;
             }
-            k++;
+            idx++;
         }
 
-        /* Copy remaining elements of L[] if any */
-        while (i < n1) {
-            arr[k] = L[i];
-            i++;
-            k++;
-        }
-
-        /* Copy remaining elements of R[] if any */
-        while (j < n2) {
-            arr[k] = R[j];
-            j++;
-            k++;
-        }
-    }
-
-    private static void printArr(int[] arr) {
-        Arrays.stream(arr).forEach(x -> System.out.println(x));
-    }
-
-
-    public static void main(String... s) {
-        int arr[] = new int[]{5, 2, 8, 9, 4, 0, 4, 1};
-        sort(arr);
-        printArr(arr);
+        //remaining items of either array.
+        while (fptr < arr1.length) mergedArr[idx++] = arr1[fptr++];
+        while (sptr < arr2.length) mergedArr[idx++] = arr2[sptr++];
+        return mergedArr;
     }
 }
