@@ -12,3 +12,5 @@ Techniques:
 3. sum-k algo for finding pair.
 4. sum-k with hashmap for finding subarray with modification.
 
+5. Matrix rotation 90 clockwise/anticlockwise
+

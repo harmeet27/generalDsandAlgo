@@ -1,4 +1,4 @@
-package com.preparation.ds.array;
+package com.preparation.ds.array.matrix;
 
 import java.util.LinkedList;
 import java.util.List;
