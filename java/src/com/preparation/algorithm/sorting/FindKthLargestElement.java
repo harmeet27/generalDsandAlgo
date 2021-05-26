@@ -38,18 +38,14 @@ public class FindKthLargestElement {
     private int findKthLargestQuickSelect(int[] arr, int k, int l, int r) {
         if (l > r) return -1;
 
-        if (l < arr.length && r >= 0) {
-            int pivotIdx = quickSort(arr, l, r);
-
-            int kthMaxIndex = arr.length - k;
-            if (pivotIdx == kthMaxIndex)
-                return arr[pivotIdx];
-            else if (kthMaxIndex > pivotIdx)
-                return findKthLargestQuickSelect(arr, k, pivotIdx + 1, r);
-            else
-                return findKthLargestQuickSelect(arr, k, l, pivotIdx - 1);
-        }
-        return -1;
+        int pivotIdx = quickSort(arr, l, r);
+        int kthMaxIndex = arr.length - k;
+        if (pivotIdx == kthMaxIndex)
+            return arr[pivotIdx];
+        else if (kthMaxIndex > pivotIdx)
+            return findKthLargestQuickSelect(arr, k, pivotIdx + 1, r);
+        else
+            return findKthLargestQuickSelect(arr, k, l, pivotIdx - 1);
     }
 
 
