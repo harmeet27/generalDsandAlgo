@@ -35,9 +35,11 @@
 
 
 5. Sorting:
-    1. QuickSort : In an array of nuts and bolts having same number, sort it , you can compare nuts with nuts and bolts with bolts.
-                    https://www.codingninjas.com/blog/2020/12/31/nuts-and-bolts-problem-set-1/#:~:text=It%20is%20a%20type%20of,are%20greater%20when%20ascending%20order.
-                  Another way to ask this question is Lock and Key, a lock can be opened by its key with same number
+    1. QuickSort :1.  In an array of nuts and bolts having same number, sort it , you can compare nuts with nuts and bolts with bolts.
+                        https://www.codingninjas.com/blog/2020/12/31/nuts-and-bolts-problem-set-1/#:~:text=It%20is%20a%20type%20of,are%20greater%20when%20ascending%20order.
+                        Another way to ask this question is Lock and Key, a lock can be opened by its key with same number
+
+                  2. Find kth Max/min element in linear time.
 
     2. MergeSort
     3. CountingSort: dutch algo, sort 0,1 array
