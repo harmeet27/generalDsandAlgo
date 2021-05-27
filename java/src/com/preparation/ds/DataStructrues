@@ -9,6 +9,7 @@
     7. Converting Char to Int : char-'a';
     8. converting int to char : i-'0'
     9. Spiral traverse : 4 for loops and with recursion
+    10. Median of 2 sorted Array
 
 2. LinkedList:
     1. reverse

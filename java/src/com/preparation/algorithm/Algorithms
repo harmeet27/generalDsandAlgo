@@ -25,7 +25,7 @@
     3. FindElementInInfiniteSortedArray : find the range first of start,end
     4. search in matrix :
            a. matrix elements are row and col sorted : start with topMost element and keep eliminating row,col.
-           b. row is sorted and next row start>prevRowEnd :  find the Ciel from the lastColumn and use that row. ONce found, apply bs on that row.
+           b. row is sorted and next row start>prevRowEnd :  find the Ceil from the lastColumn and use that row. ONce found, apply bs on that row.
 
 
 4. MergeIntervals/ Scheduling
@@ -74,6 +74,7 @@
 9. String
     Search
         1. KnutthMorris prat : skip the elements already traversed.
+                            one more question on its implementation:
         2. RainKarp : hash
         3. Tries : prefix based searching.
     2. LexicographicallyStringJustGreaterThanCurrent ex dhck-> dhkc
@@ -111,6 +112,7 @@
 
 14. BFS:
     1. Rotten oranges.
+    2. Shortest distance
 
 
 15. GraphTheory:
