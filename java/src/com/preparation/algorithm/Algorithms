@@ -74,7 +74,8 @@
 9. String
     Search
         1. KnutthMorris prat : skip the elements already traversed.
-                            one more question on its implementation:
+                            one more question on its implementation: RepeatedSubStringPattern
+                            Find the longest prefix which is also a suffix in aux array.
         2. RainKarp : hash
         3. Tries : prefix based searching.
     2. LexicographicallyStringJustGreaterThanCurrent ex dhck-> dhkc
