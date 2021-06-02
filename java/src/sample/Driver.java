@@ -1,19 +1,47 @@
 package sample;
 
+import java.util.Arrays;
+import java.util.Comparator;
 
-import java.math.BigDecimal;
 
 public class Driver {
 
-    public static void main(String... s) {
-        double d = 0;
 
-        BigDecimal decimal = new BigDecimal(0.00000000010001599549);
+//    static int[] absSort(int[] arr) {
+//        Arrays.sort(arr, new CustomComparator());
+//        return arr;
+//        // your code goes here
+//    }
+
+    static class CustomComparator implements Comparator {
+
+        @Override
+        public int compare(Object o1, Object o2) {
+            int element1 = (int) o1;
+            int element2 = (int) o2;
+
+            int first = Math.abs(element1);
+            int second = Math.abs(element2);
 
 
-//        System.out.println(Math.floor(d));
-        System.out.println(decimal.compareTo(BigDecimal.ZERO) > 0);
+            if (first < second) {
+                return -1;
+            } else if (first > second) {
+                return 1;
+            } else {
+                if (element1 < element2) return -1;
+                else if (element2 < element1) return 1;
+                else return 0;
+            }
+        }
     }
 
+
+    public static void main(String[] args) {
+
+        int[] arr = {2, -7, -2, -2, 0};
+//        absSort(arr);
+
+    }
 
 }

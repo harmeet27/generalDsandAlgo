@@ -10,4 +10,36 @@ package com.preparation.algorithm.string;
  * To check if the string is repeating itself, we just need the last entry to be non-zero and str.size() to divide (str.size()-last entry).
  */
 public class RepeatedSubstringPattern {
+
+    public boolean repeatedSubstringPattern(String s) {
+
+        int i = 1;
+        int j = 0;
+        int strLen = s.length();
+        int lps[] = new int[strLen];
+        while (i < strLen) {
+            if (s.charAt(i) == s.charAt(j)) {
+                lps[i] = j + 1;
+                i++;
+                j++;
+            } else {
+                //mismatch
+                if (j == 0) {
+                    lps[i] = 0;
+                    i++;
+                } else {
+                    j = lps[j - 1];
+                }
+            }
+        }
+
+        int endLps = lps[strLen - 1];
+        if (endLps == 0)
+            return false;
+
+        int repeatedLength = strLen - endLps;
+        if (strLen % repeatedLength == 0)
+            return true;
+        return false;
+    }
 }
