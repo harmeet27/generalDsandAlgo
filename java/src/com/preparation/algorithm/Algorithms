@@ -5,6 +5,7 @@
     4. Longest Substring with equal number of 0/1.
     5. String anagrams (hard)
     6. FindAllSubarraySum (hard) 0(n)
+    7. Rate Limiter algorithm :  with minQueue of timestamps of request.
 
 
 2. Two-Pointers:
