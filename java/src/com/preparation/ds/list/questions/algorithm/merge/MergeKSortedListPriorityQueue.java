@@ -1,4 +1,4 @@
 package com.preparation.ds.list.questions.algorithm;
 
-public class Sample {
+public class MergeKSortedListPriorityQueue {
 }
