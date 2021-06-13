@@ -1,4 +1,4 @@
-package com.preparation.algorithm;
+package com.preparation.algorithm.pointers;
 
 import java.util.Arrays;
 

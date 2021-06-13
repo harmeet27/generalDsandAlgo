@@ -21,6 +21,11 @@ A. if the element is not found in binarySearch then after the end of while loop.
 7. Find A Missing number in sorted array of all other duplicates: o(logn)
     Hint: missing number would always be on the side where there are odd number of elements excluding.
     itself(middle)
+
+    Find A Missing number in non-sorted array of all other duplicates with values in range 1..n+1
+    a. can use modulus here like storing each value as its -ve and while reading modulus.
+    b. If array modification is now allowed:
+        https://leetcode.com/problems/find-the-duplicate-number
 8. find Number in sorted running stream.
 9. Allocate pages of books(Hard)
 

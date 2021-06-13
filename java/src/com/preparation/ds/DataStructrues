@@ -20,15 +20,16 @@
     5. Total number of elements in a loop.
     6. Break the loop (find total number of elements in a loop, 2 pointer, f->start, s-> start+noOfNodesInALoop,
         where they meet, break it)
-    7. Merge 2 sorted list
-    8. isPalindrome()
-    9. Sum2LinkedList
-    10. Add 1 to Linkedlist
-    11. Rearrange a LinkedList as f1,mid,f2,mid+1,f3,mid+3
-    12. Clone a linkedlist with random pointer
-    13. remove the current node(where you are stnding) in the linkedList. Head not given.
-    14. Flatten a linkedList having childNode.
-    15. Reverse in size k --> use start,end of a window.
+    7. isPalindrome()
+    8. Sum2LinkedList
+    9. Add 1 to Linkedlist
+    10. Rearrange a LinkedList as f1,mid,f2,mid+1,f3,mid+3
+    11. Clone a linkedlist with random pointer
+    12. remove the current node(where you are stnding) in the linkedList. Head not given.
+    13. Flatten a linkedList having childNode.
+    14. Reverse in size k --> use start,end of a window.
+    15. Merge 2 sorted List without space.(using dummy)
+    16. Merge Ks' sorted List using priorityQueue and above merge.
 
 3. Stack: FIFO
     1. stock span problem

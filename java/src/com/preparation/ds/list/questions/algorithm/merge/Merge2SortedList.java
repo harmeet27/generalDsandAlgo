@@ -1,4 +1,4 @@
-package com.preparation.ds.list.questions.algorithm;
+package com.preparation.ds.list.questions.algorithm.merge;
 
 public class Merge2SortedList {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -9,30 +9,24 @@ public class Merge2SortedList {
 
     private ListNode merge(ListNode f, ListNode s) {
 
-        ListNode head = null;
-        if (f.val <= s.val) {
-            head = f;
-            f = f.next;
-        } else {
-            head = s;
-            s = s.next;
-        }
-
-        ListNode curr = head;
+        ListNode dummyHead = new ListNode();
+        ListNode tail = dummyHead;
         while (f != null && s != null) {
             if (f.val <= s.val) {
-                curr.next = f;
+                tail.next = f;
                 f = f.next;
             } else {
-                curr.next = s;
+                tail.next = s;
                 s = s.next;
             }
-            curr = curr.next;
+            tail = tail.next;
         }
 
-        if (f != null) curr.next = f;
-        if (s != null) curr.next = s;
-        return head;
+        if (f != null) tail.next = f;
+        if (s != null) tail.next = s;
+
+        dummyHead = dummyHead.next;
+        return dummyHead;
     }
 
 

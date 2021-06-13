@@ -1,5 +1,11 @@
-package com.preparation.ds.list.questions.algorithm;
+package com.preparation.ds.list.questions.algorithm.merge;
 
+/**
+ * Using merge operation, total complexity is for K suchList to perform merge(which uses o(f1+f2))
+ * 0(N*K);
+ *
+ * Can be optimized to NlogK using priorityQueue.
+ */
 public class MergeKSortedList {
     public ListNode mergeKLists(ListNode[] lists) {
 
