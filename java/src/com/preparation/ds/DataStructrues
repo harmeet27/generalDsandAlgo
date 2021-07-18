@@ -41,7 +41,8 @@
 6. TreeMap : sorted by keys
 
 7. Trees:
-    1. Traversal : (DFS)pre, post, in, levelOrder(queue/BFS), vertical Order
+    1. Traversal : (DFS)pre, post, in, levelOrder(queue/BFS), vertical Order : Iteratively as well, boundary traversal
+    https://leetfree.com/problems/boundary-of-binary-tree
     2. size
     3. maxPathSum
     4. minPathSum
@@ -49,11 +50,13 @@
     6. find all nodes at distance k from node --> find ancestors and use it.
     7. find max subTree : Diameter : Or similar question --> Find the maximum path sum between two leaves of a binary tree
     8. top view, left view, right view
-    9. mirror of a tree
+    9. mirror of a tree(inversion)
     10. https://leetcode.com/problems/delete-nodes-and-return-forest/submissions/
+    11. Zig Zag Traversal : Deque or Stack
+    12. Find if a tree is a valid BST or not. min & max use for each node. Inorder not efficient.
 
     BST : insertion, deletion, search
-    Heap
+    Heap:
     AVL , Red Black tree
     Tries
 

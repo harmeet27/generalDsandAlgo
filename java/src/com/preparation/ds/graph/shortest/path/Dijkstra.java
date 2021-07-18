@@ -117,7 +117,6 @@ public class Dijkstra {
         return path;
     }
 
-
     public static void main(String... s) {
         Map<Integer, List<Edge>> graph = new HashMap<>();
 

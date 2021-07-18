@@ -78,6 +78,7 @@
     7. Rearrange String such that no 2 same characters are adjacent. "aabbacc" --> abcabca
     8. MinRemovalUnique : min removal of each char such that the count of each char is unique.
     9. String without AAABBB
+    10. Merge Ks' sorted List using priorityQueue.
 
 
 9. String

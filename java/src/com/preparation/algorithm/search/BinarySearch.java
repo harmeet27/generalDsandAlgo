@@ -44,7 +44,7 @@ public class BinarySearch {
         int arr[] = new int[]{1, 2, 4, 1, 3, 6, 9, 4, 7, 5};
         Arrays.sort(arr);
         int k = 10;
-        System.out.println(iterativeBinarySearch(arr, k));
+        System.out.println(iterativeBinarySearch(arr, 10));
         System.out.println(recusriveBinarySearch(arr, 0, arr.length - 1, k));
 
 
