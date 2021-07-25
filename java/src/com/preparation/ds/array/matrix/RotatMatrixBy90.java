@@ -22,7 +22,7 @@ package com.preparation.ds.array.matrix;
  * 1  4  7
  * 2  5  8
  * 3  6  9
- * Then flip the matrix horizontally. (swap(matrix[i][j], matrix[i][matrix.length-1-j]) i.e. flip the row by column
+ * Then flip(swap columns) the matrix horizontally. (swap(matrix[i][j], matrix[i][matrix.length-1-j]) i.e. flip the row by column
  * <p>
  * 7  4  1
  * 8  5  2
