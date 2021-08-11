@@ -6,6 +6,7 @@
     5. String anagrams (hard)
     6. FindAllSubarraySum (hard) 0(n)
     7. Rate Limiter algorithm :  with minQueue of timestamps of request.
+    8. shortest subarray exceeding target
 
 
 2. Two-Pointers:
@@ -24,6 +25,7 @@
     13. 3SumSmaller
     14. Candy distribution : https://leetcode.com/problems/candy/
     15. https://leetcode.com/problems/longest-consecutive-sequence/
+    16. Number of possible triangles from array.
 
 
 
@@ -47,9 +49,14 @@
                         https://www.codingninjas.com/blog/2020/12/31/nuts-and-bolts-problem-set-1/#:~:text=It%20is%20a%20type%20of,are%20greater%20when%20ascending%20order.
                         Another way to ask this question is Lock and Key, a lock can be opened by its key with same number
 
-                  2. Find kth Max/min element in linear time.
+                  2. Find kth Max/min element in linear time.(Quick Select)
 
-    2. MergeSort
+    2. MergeSort :
+            a. Merge 2 sorted List
+            b. Merge K sorted Lists
+            c. Merge 2 sorted Array with one array as m+n size in o(1) space.
+            d. count of smaller number after self : https://leetcode.com/problems/count-of-smaller-numbers-after-self/
+            e. Target Array : https://leetcode.com/problems/create-target-array-in-the-given-order/
     3. CountingSort: dutch algo, sort 0,1 array
     4. SelectionSort
     5. InsertionSort: impact of this on partialSorted array

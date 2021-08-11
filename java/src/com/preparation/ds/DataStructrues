@@ -8,9 +8,18 @@
     6. +50(start)/-50(end) : using prefetch to perform operations on a range of indexes.
     7. Converting Char to Int : char-'a';
     8. converting int to char : i-'0'
-    9. Spiral traverse : 4 for loops and with recursion
-    10. Median of 2 sorted Array : same size (Medium)
-                                   different size (hard)
+    9. Median of 2 sorted Array : same size (Medium)
+                                  different size (hard)
+
+2 Matrix :
+    a. Rotate matrix by 90 clockwise/anticlockwise
+    b. search in matrix :
+      a. matrix elements are row and col sorted : start with topMost element and keep eliminating row,col.
+      b. row is sorted and next row start>prevRowEnd :  find the Ceil from the lastColumn and use that row. ONce found, apply bs on that row.
+
+    c. Spiral traverse : 4 for loops and with recursion / bottomLeft, bottomRight, topLeft, topRight.
+    d. Median in sorted Array
+    e.
 
 2. LinkedList:
     1. reverse
@@ -30,10 +39,12 @@
     14. Reverse in size k --> use start,end of a window.
     15. Merge 2 sorted List without space.(using dummy)
     16. Merge Ks' sorted List using priorityQueue and above merge.
+    17. Reverse a linkedlist in alternate k.
 
 3. Stack: FIFO
     1. stock span problem
     2. equal brackets.
+    3. Implement stack with queue/ queue with stack
 
 4. Queue : LIFO : BFS
 
@@ -61,3 +72,7 @@
     Tries
 
 8. Graph (already provided)
+9. Tries :
+    Wordchecker
+
+
