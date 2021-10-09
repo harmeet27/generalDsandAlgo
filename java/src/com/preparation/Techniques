@@ -6,4 +6,6 @@
 4. UnionFind.
 5. Shortest Distance is BFS.(first encountered)
 6. In Case of trees, if we want to return 2 values, return it as LinkedList.
-7.
+7. In case of circular traversal, we can obtain as idx = i % totalLength. Some example, find the immediate greater
+    element on right side in circular array.
+8.

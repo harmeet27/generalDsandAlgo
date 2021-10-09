@@ -10,12 +10,15 @@
     8. converting int to char : i-'0'
     9. Median of 2 sorted Array : same size (Medium)
                                   different size (hard)
-
+    10. Find longest consecutive range in an unordered array in linear time (HashMap with visited +1, -1)
+        Algoexpert
+    11.
 2 Matrix :
     a. Rotate matrix by 90 clockwise/anticlockwise
     b. search in matrix :
       a. matrix elements are row and col sorted : start with topMost element and keep eliminating row,col.
       b. row is sorted and next row start>prevRowEnd :  find the Ceil from the lastColumn and use that row. ONce found, apply bs on that row.
+         Find the max 1 submatrix with no zeroes in sorted row, col, binary matrix.(Easy, focus on first one in each row)
 
     c. Spiral traverse : 4 for loops and with recursion / bottomLeft, bottomRight, topLeft, topRight.
     d. Median in sorted Array
@@ -58,14 +61,14 @@
     3. maxPathSum
     4. minPathSum
     5. FindAncestors of a node.
-    6. find all nodes at distance k from node --> find ancestors and use it.
+    6. find all nodes at distance k from node --> find ancestors and use it. (Or, create Map<Node, ParentNode) and traverse this with visited/ AlgoExpert)
     7. find max subTree : Diameter : Or similar question --> Find the maximum path sum between two leaves of a binary tree
     8. top view, left view, right view
     9. mirror of a tree(inversion)
     10. https://leetcode.com/problems/delete-nodes-and-return-forest/submissions/
     11. Zig Zag Traversal : Deque or Stack
-    12. Find if a tree is a valid BST or not. min & max use for each node. Inorder not efficient.
-
+    12. Given a root of the tree, Find if tree is a valid BST or not : min & max use for each node. Inorder not efficient.
+c
     BST : insertion, deletion, search
     Heap:
     AVL , Red Black tree
