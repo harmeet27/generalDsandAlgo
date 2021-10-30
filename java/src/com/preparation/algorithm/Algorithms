@@ -45,7 +45,8 @@
     4. search in matrix :
            a. matrix elements are row and col sorted : start with topMost element and keep eliminating row,col.
            b. row is sorted and next row start>prevRowEnd :  find the Ceil from the lastColumn and use that row. ONce found, apply bs on that row.
-
+    5. https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/ (unique elements)
+    
 4. MergeIntervals/ Scheduling
     1. Basic 2 condition for collision : (start1>=start2 && start1<=end2) || (start2>=start1 && start2<=end1)
     2. numberOfStations/MeetingRoom : given (start,end) of trains find min stations needed to accomodate / Find meeting rooms needed

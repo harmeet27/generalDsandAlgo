@@ -10,7 +10,8 @@ import java.util.Arrays;
  *    which is also a suffix of the pattern to search.
  * For ex : ABC as pattern has prefixes: A, AB but has suffixes : C,BC,ABC , the max common prefix/suffix is
  *
- * The Naive pattern searching algorithm doesn’t work well in cases where we see many matching characters followed by a mismatching character. Following are some examples.
+ * The Naive pattern searching algorithm doesn’t work well in cases where we see many matching characters
+ * by a mismatching character. Following are some examples.
  *
  *
  *
@@ -32,6 +33,24 @@ import java.util.Arrays;
  * lps[] that tells us the count of characters to be skipped.
  *
  *  2. Use lps[] to check for string in original String and use it for skipping elements in case there is a mismatch.
+ *
+ *
+ *  DIY:
+ *  1. String having a lot of common prefixes with pattern results in poor time complexity of naive.
+ *  2. TO improve this we create lps aux array which helps us in skipping certain elements in such cases.
+ *
+ *   Text :    abcxabcdabxabcdabcdabcy
+ *Pattern :    abcdabcy
+ *
+ *             abcxabcdabxabcdabcdabcy
+ *             abcd   (d is not matched with x so we check if we can skip elements for checking using lps)
+ *
+ *             abcxabcdabxabcdabcdabcy
+ *                 abcdabc  (c is not matched with x in the above pattern , we check if we can skip)
+ *
+ *             abcxabcdabxabcdabcdabcy
+ *                     abcdabc  (we skipped matching ab since it is the longest prefix till this point)
+ *
  */
 public class KMP {
 
@@ -63,7 +82,7 @@ public class KMP {
         String pattern3 = "AAABAAA";
         String pattern4 = "ABCDE";
         String pattern5 = "AAAA";
-        Arrays.stream(computeLps(pattern5.toCharArray())).forEach(element -> System.out.print(element + " , "));
+        Arrays.stream(computeLps(pattern2.toCharArray())).forEach(element -> System.out.print(element + " , "));
     }
 
 }

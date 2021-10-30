@@ -239,12 +239,21 @@ public class Driver {
 //        int N = arr.length;
 //        int K = 5;
 
-        int arr[] = { 1,2 };
-        int N = arr.length;
-        int K = 1;
+//        int arr[] = { 1,2 };
+//        int N = arr.length;
+//        int K = 1;
+//
+//        System.out.println(evenSumK(arr, N, K));
 
-        System.out.println(evenSumK(arr, N, K));
+        String s = "abc %s";
+        String f = String.format(s,"ho");
+        System.out.println(s);
+        System.out.println(f);
+        System.out.println(String.format(s,"haha"));
+
+
+
     }
-
+LO
 
 }
