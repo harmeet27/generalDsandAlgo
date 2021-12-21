@@ -7,7 +7,8 @@
     6. FindAllSubarraySum (hard) 0(n)
     7. Rate Limiter algorithm :  with minQueue of timestamps of request.
     8. shortest subarray exceeding target(GS)
-
+    9. Kadane algorithm --> circular kadane --> https://leetcode.com/problems/maximum-sum-circular-subarray/
+                            https://leetcode.com/problems/maximum-product-subarray/
 
 2. Two-Pointers:
     1. Find a pair with sum=k, or equal. in  sorted Array
@@ -51,7 +52,7 @@
     1. Basic 2 condition for collision : (start1>=start2 && start1<=end2) || (start2>=start1 && start2<=end1)
     2. numberOfStations/MeetingRoom : given (start,end) of trains find min stations needed to accomodate / Find meeting rooms needed
     3. Find common Calendar Availability : given times of 2 people (start,end) find available time slot for meeting.
-
+    4. BalloonBursts with min Arrows : https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
 
 5. Sorting:
     1. QuickSort :1.  In an array of nuts and bolts having same number, sort it , you can compare nuts with nuts and bolts with bolts.

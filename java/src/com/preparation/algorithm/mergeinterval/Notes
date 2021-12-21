@@ -2,7 +2,10 @@ https://leetcode.com/problems/interval-list-intersections/
 https://leetcode.com/problems/insert-interval/
 
 
-https://leetcode.com/problems/exclusive-time-of-functions/
+https://leetcode.com/problems/exclusive-time-of-functions/ -->  --> input sets are similar to equal brackets problem.
+
+https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/submissions/   --> sort the array by end time asc. Then find totalnonoverlapping.
+
 
 Algo1 : TargetMap , and used it for skills searching
 target --> [y,u,b,o,p]   --> y:true

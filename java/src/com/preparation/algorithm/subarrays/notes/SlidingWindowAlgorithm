@@ -16,6 +16,8 @@ So we want to be able to identify the problems that sliding window pattern works
 
 EXAMPLE:
 1. Kandane algorithm --> max subarray sum
+    CircularKandane
+    https://leetcode.com/problems/maximum-sum-circular-subarray/
 2. Finding max avg of size k
 3. maximum Subarray with equal number of 0 and 1.
 4. https://leetcode.com/problems/longest-substring-without-repeating-character

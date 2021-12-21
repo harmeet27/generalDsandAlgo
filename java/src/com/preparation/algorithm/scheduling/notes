@@ -6,3 +6,7 @@ Meeting room:
 4. Push this meeting in the heap
 5. Required number of rooms = Heap size at the end
    Time/Space: O(n.lg n)/O(n), where n is number of meetings
+
+
+Similar Questions:
+https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/submissions/   --> sort the array by end time asc. Then find totalnonoverlapping.

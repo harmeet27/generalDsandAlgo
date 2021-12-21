@@ -46,14 +46,13 @@
 
 3. Stack: FIFO
     1. stock span problem
-    2. equal brackets.
+    2. equal brackets.      --> https://leetcode.com/problems/interval-list-intersections/
     3. Implement stack with queue/ queue with stack
 
 4. Queue : LIFO : BFS
 
 5. ArrayList --> built with arrays, Set --> built on top of HashMap.
 6. TreeMap : sorted by keys
-
 7. Trees:
     1. Traversal : (DFS)pre, post, in, levelOrder(queue/BFS), vertical Order : Iteratively as well, boundary traversal
     https://leetfree.com/problems/boundary-of-binary-tree
