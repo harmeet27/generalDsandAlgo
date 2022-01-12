@@ -10,6 +10,8 @@
     9. Kadane algorithm --> circular kadane --> https://leetcode.com/problems/maximum-sum-circular-subarray/
                             https://leetcode.com/problems/maximum-product-subarray/
 
+       https://leetcode.com/problems/fruit-into-baskets/
+
 2. Two-Pointers:
     1. Find a pair with sum=k, or equal. in  sorted Array
     2. Find a triplet with sum k in sorted Array (3sum)

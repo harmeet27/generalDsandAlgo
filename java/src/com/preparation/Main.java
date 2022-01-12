@@ -1,5 +1,6 @@
 package com.preparation;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.TreeSet;
@@ -116,5 +117,7 @@ public class Main {
     }
 
     public static void main(String... s) {
+        Arrays.sort(new int[]{1,4,3,2});
+
     }
 }

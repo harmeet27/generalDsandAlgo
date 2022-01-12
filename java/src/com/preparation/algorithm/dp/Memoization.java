@@ -1,5 +1,7 @@
 package com.preparation.algorithm.dp;
 
+import java.util.TreeSet;
+
 /**
  * Memoization refers to the technique of caching and reusing previously computed results.
  *
@@ -39,4 +41,8 @@ package com.preparation.algorithm.dp;
  * 2. For unbounded Knapsack : use for with dfs type
  */
 public class Memoization {
+    TreeSet<Integer> ts= new TreeSet<>();
+    public void a(){
+
+    }
 }

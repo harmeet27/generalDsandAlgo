@@ -28,6 +28,7 @@ Algorithms:
 
 2. SHORTEST PATH PROBLEM FROM Source to Target Vertex
     1. BFS : unweighted graph(first node encountered will be the shortest path)
+               https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/solution/
     2. Dijkstra : weighted and no –ve edge. (BFS + priorityQueue over queue)
     3. Bellman Ford: weighted and considers –ve edge.
     4. Topological sort can be used for +ve and -ve edge to find shortest distance,
