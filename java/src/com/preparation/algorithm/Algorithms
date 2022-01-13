@@ -38,6 +38,9 @@
         Like if at 1 --> 6,1 picked from last for max
                    2 --> 1 picked from last(1,2 from start)
 
+        https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
+        https://leetcode.com/problems/minimum-difference-between-largest-and-smallest-value-in-three-moves/
+
 
 
 3. BinarySearch :
