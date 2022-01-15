@@ -30,7 +30,8 @@
                             or Chocolate distribution
     15. https://leetcode.com/problems/longest-consecutive-sequence/
     16. Number of possible triangles from array.
-    17. Find the max sum which can be formed using last or first array value in contionus of size k.
+    17. https://leetcode.com/problems/fruit-into-baskets/
+    18. Find the max sum which can be formed using last or first array value in contionus of size k.
         (Baub's MS) :
         1,2,3,4,5,6,1 : k=3 --> 12
         1,2,50,4,10,10: k=3 --? 53
@@ -40,7 +41,8 @@
 
         https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
         https://leetcode.com/problems/minimum-difference-between-largest-and-smallest-value-in-three-moves/
-
+        https://leetcode.com/problems/removing-minimum-and-maximum-from-array/   (bothFromStart, bothFromEnd, oneFromEither)
+     19. https://leetcode.com/problems/expressive-words/
 
 
 3. BinarySearch :
@@ -101,6 +103,8 @@
     8. MinRemovalUnique : min removal of each char such that the count of each char is unique.
     9. String without AAABBB
     10. Merge Ks' sorted List using priorityQueue.
+    11. https://leetcode.com/problems/hand-of-straights   or https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/
+    12. https://leetcode.com/problems/max-value-of-equation/
 
 
 9. String
