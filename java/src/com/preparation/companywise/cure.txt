@@ -146,5 +146,6 @@ if(count>=k){
 Return false;
 }
 
-LLD: Design cache
-HLD: Design Airport Display System, Design online notification when a friend comes online/offline in chat apps.
+LLD: Design cache system
+HLD: Design Airport Display System
+     Design online notification when a friend comes online/offline in chat apps recieve notification.

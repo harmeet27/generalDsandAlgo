@@ -1,8 +1,9 @@
-
+MC : design a restaurant application where a FoodItem is composed of multiple ingredients.
 HLD : Design competition submission application.
 PS  : 1. If a ball is dropped from root of binary tree, and each node can toggle left right alternatively, figure out which
          leaf node it will land.
       2. Design a library search mechanism  (B+ trees and Tries)
+HM : Discussion on existing projects and on scale + some behavioral.
 
 Context
 Dynamic menu cards are just like any other menu card that displays dishes offered by the restaurants. Restaurants’ owners are looking for a dynamic menu card instead of traditional static menu cards. Customers can choose any item from the menu card, whereas items can be prepared only if required ingredients for the selected dish are available in that restaurant.
