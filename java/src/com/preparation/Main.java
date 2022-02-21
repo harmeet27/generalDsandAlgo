@@ -3,6 +3,7 @@ package com.preparation;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Main {
@@ -117,7 +118,26 @@ public class Main {
     }
 
     public static void main(String... s) {
-        Arrays.sort(new int[]{1,4,3,2});
+        isValid("110","011");
 
+    }
+
+    private static boolean isValid(String car, String otherCar){
+        int xor=0;
+        for(int i=0;i<car.length();i++){
+            xor=xor^(car.charAt(i));
+        }
+
+        for(int i=0;i<otherCar.length();i++){
+            xor=xor^(otherCar.charAt(i));
+        }m
+
+        if(xor==0 || xor==1)
+            return true;
+
+        return false;
+
+        TreeMap t= new TreeMap();
+        t.
     }
 }

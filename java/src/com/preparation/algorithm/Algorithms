@@ -79,6 +79,7 @@
     5. InsertionSort: impact of this on partialSorted array
     6. Knuth shuffle algorithm : to randomly shuffle elements.
     7. Custom Sort : Using Comparator in java : Q1. Sort the array using their mod
+                      https://leetcode.com/problems/rank-teams-by-votes/
 
 
 6. PrefetchSum :
