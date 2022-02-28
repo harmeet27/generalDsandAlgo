@@ -130,14 +130,13 @@ public class Main {
 
         for(int i=0;i<otherCar.length();i++){
             xor=xor^(otherCar.charAt(i));
-        }m
+        }
 
         if(xor==0 || xor==1)
             return true;
 
         return false;
 
-        TreeMap t= new TreeMap();
-        t.
+
     }
 }

@@ -1,4 +1,5 @@
-import java.util.ArrayDeque;
+package sample;
+
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -135,8 +136,14 @@ class Position {
  * isGameOver() --> 1. position on the basis of direction, hieght and width
  *                  2. biting itself
  *
- * Position : int x;
+ * sample.Position : int x;
  *            int y;
  *
  *
  */
+
+
+
+/**
+
+ ***/

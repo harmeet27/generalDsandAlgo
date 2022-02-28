@@ -52,3 +52,36 @@
         consider that as elements which are remaining, so arr.length-(partitionKey-i+1) as removals;
     c. Keep performing this to find min removals length
     Time complexity: o(nlogn).
+
+
+3. Tech design:  Which requires more ThreadPool --> CPU intensive or IO intensive operations.
+                 GC pause
+                 Load balancing ways
+                 read from recent write cluster in write heavy system with eventual consistency.
+
+
+4. LLD : Design a Locker Management system,
+        1. User should able to lock locker with otp/tommrrow with fingerprint.
+        2. Delivery guy should able to lock unlock it etc.
+
+5. System Design:
+    Design the E2E Arch of an online auction system.
+
+    In this system there are 100s of thousands of auctions going on in parallel and more popping up.
+    Across all these auctions put together there are about millions of bids happening as well.
+
+    0. create an auction.  --> type, price, customizatble auction end time.   --> 1...1 item details.
+    1. bid  --> auctionId, price  --> mutiple bids by the same user. next bid higher.
+    2. End of the auction : time.  --> higher bid always.
+
+    2. At any point an auction should display the highest bid so far
+    3. at the end of the auction it should display the highest bid + the top 3 bids made so far.
+    4. An auction can last for a max of 24 hours.
+
+
+    Learning : High concurrency/ like max Bidding should only be allowed --> needs to move as
+                async job for faster operation and solving concurrency issues.
+                Same in Amazon order --> it says order placed, not order approved considering
+                                        concurrency in such high load system.
+
+                ETag is versioning.

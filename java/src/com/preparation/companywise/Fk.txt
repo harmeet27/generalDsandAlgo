@@ -30,8 +30,8 @@ All code should be your own
 Please focus on the Bonus questions only after ensuring the required features are complete and demoable.
 Expectations
 We are not expecting you to write REST API or create UI. It's just a functional APIs are expected here.
-Create the sample data yourself. You can put it into a file, test case or main driver program itself.
-Code should be demo-able. Either by using a main driver program or test cases.
+Create the sample data yourself. You can put it into a file, test case or sample.main driver program itself.
+Code should be demo-able. Either by using a sample.main driver program or test cases.
 Code should be modular. Code should have basic OO design. Please do not jam the responsibilities of one class into another.
 Code should be extensible. Wherever applicable, use interfaxces and contracts between different methods. It should be easy to add/remove functionality without re-writing the entire codebase.
 Code should handle edge cases properly and fail gracefully.

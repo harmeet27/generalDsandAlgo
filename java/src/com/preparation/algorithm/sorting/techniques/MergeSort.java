@@ -14,7 +14,7 @@ package com.preparation.algorithm.sorting.techniques;
  * Quick sort is more efficient and works faster than merge sort in case of smaller array size or datasets.
  * Sorting method :
  *
- * The quick sort is internal sorting method where the data is sorted in main memory.
+ * The quick sort is internal sorting method where the data is sorted in sample.main memory.
  * whereas
  * The merge sort is external sorting method in which the data that is to be sorted cannot be accommodated in the memory and needed auxiliary memory for sorting.
  *

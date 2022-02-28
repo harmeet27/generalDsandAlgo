@@ -10,7 +10,7 @@
   *
 
   Sorting method :
-  * The quick sort is internal sorting method where the data is sorted in main memory.
+  * The quick sort is internal sorting method where the data is sorted in sample.main memory.
   * whereas
   * The merge sort is external sorting method in which the data that is to be sorted cannot be accommodated in the memory and needed auxiliary memory for sorting.
 

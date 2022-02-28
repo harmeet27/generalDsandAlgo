@@ -41,7 +41,7 @@ public class Driver {
         }
     }
 
-//    public static void main(String[] args) {
+//    public static void sample.main(String[] args) {
 //
 ////        int arr[] = new int[]{4,2,5,8,7,3,7};
 ////        int arr[] = new int[]{5,5,5,5,5,5};
